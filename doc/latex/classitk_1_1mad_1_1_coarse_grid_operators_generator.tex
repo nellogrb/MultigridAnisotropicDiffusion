@@ -1,0 +1,169 @@
+\hypertarget{classitk_1_1mad_1_1_coarse_grid_operators_generator}{\section{itk\-:\-:mad\-:\-:Coarse\-Grid\-Operators\-Generator$<$ V\-Dimension $>$ Class Template Reference}
+\label{classitk_1_1mad_1_1_coarse_grid_operators_generator}\index{itk\-::mad\-::\-Coarse\-Grid\-Operators\-Generator$<$ V\-Dimension $>$@{itk\-::mad\-::\-Coarse\-Grid\-Operators\-Generator$<$ V\-Dimension $>$}}
+}
+
+
+Implementation of the two main generating rules for coarse operators\-: D\-C\-A for Geometric M\-G, and G\-C\-A for algebraic M\-G.  
+
+
+
+
+{\ttfamily \#include $<$itk\-Coarse\-Grid\-Operators\-Generator.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Coarse\-Grid\-Operator\-Type} \{ {\bfseries D\-C\-A}, 
+{\bfseries G\-C\-A}
+ \}
+\item 
+typedef double \hyperlink{classitk_1_1mad_1_1_coarse_grid_operators_generator_a271e011defd362bc027e771f8efdd693}{Precision}
+\item 
+\hypertarget{classitk_1_1mad_1_1_coarse_grid_operators_generator_aa651e8f98e66fc2a413dc0c95e392706}{typedef \\*
+\hyperlink{classitk_1_1mad_1_1_coarse_grid_operators_generator}{Coarse\-Grid\-Operators\-Generator} {\bfseries Self}}\label{classitk_1_1mad_1_1_coarse_grid_operators_generator_aa651e8f98e66fc2a413dc0c95e392706}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_coarse_grid_operators_generator_a0883143becbb78d20bb9c36361feb7be}{typedef \hyperlink{class_image}{Image}$<$ \hyperlink{classitk_1_1mad_1_1_coarse_grid_operators_generator_a271e011defd362bc027e771f8efdd693}{Precision}, \\*
+V\-Dimension $>$ {\bfseries Image\-Type}}\label{classitk_1_1mad_1_1_coarse_grid_operators_generator_a0883143becbb78d20bb9c36361feb7be}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_coarse_grid_operators_generator_a4a13e1358968c511221f8cda2d726947}{typedef Neighborhood\\*
+$<$ \hyperlink{classitk_1_1mad_1_1_coarse_grid_operators_generator_a271e011defd362bc027e771f8efdd693}{Precision}, V\-Dimension $>$ {\bfseries Stencil\-Type}}\label{classitk_1_1mad_1_1_coarse_grid_operators_generator_a4a13e1358968c511221f8cda2d726947}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_coarse_grid_operators_generator_a29a783745ad15c41e408afcacdb16095}{typedef \hyperlink{classitk_1_1mad_1_1_stencil_image}{Stencil\-Image}\\*
+$<$ \hyperlink{classitk_1_1mad_1_1_coarse_grid_operators_generator_a271e011defd362bc027e771f8efdd693}{Precision}, V\-Dimension $>$ {\bfseries Stencil\-Image\-Type}}\label{classitk_1_1mad_1_1_coarse_grid_operators_generator_a29a783745ad15c41e408afcacdb16095}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_coarse_grid_operators_generator_a86efcf353cc609c9e320f2c37c3f0e6d}{typedef \\*
+Symmetric\-Second\-Rank\-Tensor\\*
+$<$ \hyperlink{classitk_1_1mad_1_1_coarse_grid_operators_generator_a271e011defd362bc027e771f8efdd693}{Precision}, V\-Dimension $>$ {\bfseries Tensor\-Type}}\label{classitk_1_1mad_1_1_coarse_grid_operators_generator_a86efcf353cc609c9e320f2c37c3f0e6d}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_coarse_grid_operators_generator_a6e81aae6a65bc49dd2380d8ae5149449}{typedef \hyperlink{class_image}{Image}$<$ Tensor\-Type, \\*
+V\-Dimension $>$ {\bfseries Tensor\-Image\-Type}}\label{classitk_1_1mad_1_1_coarse_grid_operators_generator_a6e81aae6a65bc49dd2380d8ae5149449}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_coarse_grid_operators_generator_a42c6fe4d28725e1af106ec96b9941ed2}{typedef Image\-Region$<$ V\-Dimension $>$ {\bfseries Image\-Region\-Type}}\label{classitk_1_1mad_1_1_coarse_grid_operators_generator_a42c6fe4d28725e1af106ec96b9941ed2}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_coarse_grid_operators_generator_a2c49c95b5f248ecd053025c5cb4ee216}{typedef Image\-Type\-::\-Spacing\-Type {\bfseries Spacing\-Type}}\label{classitk_1_1mad_1_1_coarse_grid_operators_generator_a2c49c95b5f248ecd053025c5cb4ee216}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_coarse_grid_operators_generator_a1b30a1b3daab408a02f1220c742140f2}{typedef Image\-Type\-::\-Size\-Type {\bfseries Size\-Type}}\label{classitk_1_1mad_1_1_coarse_grid_operators_generator_a1b30a1b3daab408a02f1220c742140f2}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_coarse_grid_operators_generator_affa6447b3c7a4a63baee90f747d0d702}{typedef Image\-Type\-::\-Index\-Type {\bfseries Index\-Type}}\label{classitk_1_1mad_1_1_coarse_grid_operators_generator_affa6447b3c7a4a63baee90f747d0d702}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_coarse_grid_operators_generator_aef9d8a64efaca2a001b93067275bbcae}{typedef Image\-Type\-::\-Offset\-Type {\bfseries Offset\-Type}}\label{classitk_1_1mad_1_1_coarse_grid_operators_generator_aef9d8a64efaca2a001b93067275bbcae}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_coarse_grid_operators_generator_a059067a6cd27a563d37030401be27732}{typedef std\-::list$<$ Offset\-Type $>$ {\bfseries Offset\-List\-Type}}\label{classitk_1_1mad_1_1_coarse_grid_operators_generator_a059067a6cd27a563d37030401be27732}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_coarse_grid_operators_generator_a8f7b161091be742fb6981bc7574b6ac9}{typedef \\*
+\hyperlink{classitk_1_1mad_1_1_inter_grid_operators}{mad\-::\-Inter\-Grid\-Operators}\\*
+$<$ V\-Dimension $>$ {\bfseries Inter\-Grid\-Operators\-Type}}\label{classitk_1_1mad_1_1_coarse_grid_operators_generator_a8f7b161091be742fb6981bc7574b6ac9}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_coarse_grid_operators_generator_a7cd1d902fe4381841b7d4b007beb31c9}{typedef \\*
+\hyperlink{classitk_1_1mad_1_1_inter_grid_operators_a7dfcf280f70ae36e4860d8d962f4a05d}{Inter\-Grid\-Operators\-Type\-::\-Point\-Position\-Type} {\bfseries Point\-Position\-Type}}\label{classitk_1_1mad_1_1_coarse_grid_operators_generator_a7cd1d902fe4381841b7d4b007beb31c9}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classitk_1_1mad_1_1_coarse_grid_operators_generator_a391e021a367f2b50d0b0c9dbb2976f45}{Coarse\-Grid\-Operators\-Generator} (const Coarse\-Grid\-Operator\-Type \&operator\-Type)
+\item 
+\hyperlink{classitk_1_1mad_1_1_coarse_grid_operators_generator_aa502fa1ba4b27424fca4e0ad38b8dda2}{$\sim$\-Coarse\-Grid\-Operators\-Generator} ()
+\item 
+void \hyperlink{classitk_1_1mad_1_1_coarse_grid_operators_generator_ab4819801d640b41202eab1617a001a74}{Generate\-Operators} (\hyperlink{classitk_1_1mad_1_1_grids_hierarchy}{Grids\-Hierarchy}$<$ V\-Dimension $>$ $\ast$grids\-Hierarchy, const \hyperlink{class_image}{Tensor\-Image\-Type} $\ast$fine\-Tensor, const \hyperlink{classitk_1_1mad_1_1_coarse_grid_operators_generator_a271e011defd362bc027e771f8efdd693}{Precision} time\-Step) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$unsigned int V\-Dimension$>$class itk\-::mad\-::\-Coarse\-Grid\-Operators\-Generator$<$ V\-Dimension $>$}
+
+Implementation of the two main generating rules for coarse operators\-: D\-C\-A for Geometric M\-G, and G\-C\-A for algebraic M\-G. 
+
+In the first case the coarse operator $ A_h, A_{2h}, A_{4h}, \dots $ are obtained, after the diffusion tensor coefficients have been interpolated on the coarse grids, using the following centered finite differences scheme
+
+\begin{eqnarray*} & I^{n+1}(\mathbf{x}) - \Delta t \sum \limits_{r=1}^d \left( \sum \limits_{s=1}^d \frac{m_{sr}(\mathbf{x} + \mathbf{e}_s) - m_{sr}(\mathbf{x} - \mathbf{e}_s)}{2h_s} \right) \frac{I^{n+1}(\mathbf{x} + \mathbf{e}_r) - I^{n+1}(\mathbf{x} - \mathbf{e}_r)}{2h_r} \\ & - \Delta t \sum \limits_{s \neq r,\, s,r=1}^d m_{sr}(\mathbf{x}) \frac{I^{n+1}(\mathbf{x} + \mathbf{e}_s + \mathbf{e}_r) - I^{n+1}(\mathbf{x} + \mathbf{e}_s - \mathbf{e}_r) - I^{n+1}(\mathbf{x} - \mathbf{e}_s + \mathbf{e}_r) + I^{n+1}(\mathbf{x} - \mathbf{e}_s - \mathbf{e}_r) }{4h_s h_r} \\ & - \Delta t \sum \limits_{r=1}^d m_{rr}(\mathbf{x}) \frac{I^{n+1}(\mathbf{x} + \mathbf{e}_r ) - 2I^{n+1}(\mathbf{x}) + I^{n+1}(\mathbf{x} - \mathbf{e}_r ) }{h^2_r} = I^n(\mathbf{x}), \end{eqnarray*}
+
+where $ \mathbf{x} $ is a generic interior point, and $ \mathbf{e}_p $ is the versor in the $ p $ direction; hence, in the different grids, the same discretization is applied with increasing spatial steps. The original problem is described in class \hyperlink{classitk_1_1_multigrid_anisotropic_diffusion_image_filter}{Multigrid\-Anisotropic\-Diffusion\-Image\-Filter}. Regarding the border points, a homogeneous Neumann condition is considered, and implemented by forcing the virtual points outside the grid to assume the same value as their correspondent symmetric with respect to the border. On the other hand, for the tensor's coefficients derivatives, the central difference is substituted by a second order forward/backward finite difference.
+
+In the second case, $ A_{2h} $ is defined as follows
+
+\[ A_{2h} = R_h^{2h} A_h I_{2h}^h \]
+
+where $ A_h $ is the operator on the finer grid. As in this M\-G module we do not explicitly build matrix and vectors, this is done using a superposition principle\-: the coefficients of $ A_{2h} $ are obtained with the summation of effects $ A_{2h} = \sum \limits_i A^i_{2h} $, where
+
+\[ A^i_{2h} = R_h^{2h} A_h I_{2h}^h \mathbf{y}_i \]
+
+and $ \mathbf{y}_i $ is an image filled with zeros, except for an entry 1 corresponding to a single pixel; this is hence iterated for every pixel in the region to finally get $ A_{2h} $. This definition is recursive, starting with the operator at level 0 which is built with the above finite differences scheme.
+
+\begin{DoxyAuthor}{Author}
+Antonello Gerbi 
+\end{DoxyAuthor}
+
+
+Definition at line 92 of file itk\-Coarse\-Grid\-Operators\-Generator.\-h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classitk_1_1mad_1_1_coarse_grid_operators_generator_a271e011defd362bc027e771f8efdd693}{\index{itk\-::mad\-::\-Coarse\-Grid\-Operators\-Generator@{itk\-::mad\-::\-Coarse\-Grid\-Operators\-Generator}!Precision@{Precision}}
+\index{Precision@{Precision}!itk::mad::CoarseGridOperatorsGenerator@{itk\-::mad\-::\-Coarse\-Grid\-Operators\-Generator}}
+\subsubsection[{Precision}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ typedef double {\bf itk\-::mad\-::\-Coarse\-Grid\-Operators\-Generator}$<$ V\-Dimension $>$\-::{\bf Precision}}}\label{classitk_1_1mad_1_1_coarse_grid_operators_generator_a271e011defd362bc027e771f8efdd693}
+Standard class typedefs. 
+
+Definition at line 97 of file itk\-Coarse\-Grid\-Operators\-Generator.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classitk_1_1mad_1_1_coarse_grid_operators_generator_a391e021a367f2b50d0b0c9dbb2976f45}{\index{itk\-::mad\-::\-Coarse\-Grid\-Operators\-Generator@{itk\-::mad\-::\-Coarse\-Grid\-Operators\-Generator}!Coarse\-Grid\-Operators\-Generator@{Coarse\-Grid\-Operators\-Generator}}
+\index{Coarse\-Grid\-Operators\-Generator@{Coarse\-Grid\-Operators\-Generator}!itk::mad::CoarseGridOperatorsGenerator@{itk\-::mad\-::\-Coarse\-Grid\-Operators\-Generator}}
+\subsubsection[{Coarse\-Grid\-Operators\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ {\bf itk\-::mad\-::\-Coarse\-Grid\-Operators\-Generator}$<$ V\-Dimension $>$\-::{\bf Coarse\-Grid\-Operators\-Generator} (
+\begin{DoxyParamCaption}
+\item[{const Coarse\-Grid\-Operator\-Type \&}]{operator\-Type}
+\end{DoxyParamCaption}
+)}}\label{classitk_1_1mad_1_1_coarse_grid_operators_generator_a391e021a367f2b50d0b0c9dbb2976f45}
+Class constructor which takes as argument the coarse grid operator generation rule. 
+
+Definition at line 38 of file itk\-Coarse\-Grid\-Operators\-Generator.\-hxx.
+
+\hypertarget{classitk_1_1mad_1_1_coarse_grid_operators_generator_aa502fa1ba4b27424fca4e0ad38b8dda2}{\index{itk\-::mad\-::\-Coarse\-Grid\-Operators\-Generator@{itk\-::mad\-::\-Coarse\-Grid\-Operators\-Generator}!$\sim$\-Coarse\-Grid\-Operators\-Generator@{$\sim$\-Coarse\-Grid\-Operators\-Generator}}
+\index{$\sim$\-Coarse\-Grid\-Operators\-Generator@{$\sim$\-Coarse\-Grid\-Operators\-Generator}!itk::mad::CoarseGridOperatorsGenerator@{itk\-::mad\-::\-Coarse\-Grid\-Operators\-Generator}}
+\subsubsection[{$\sim$\-Coarse\-Grid\-Operators\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ {\bf itk\-::mad\-::\-Coarse\-Grid\-Operators\-Generator}$<$ V\-Dimension $>$\-::$\sim${\bf Coarse\-Grid\-Operators\-Generator} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classitk_1_1mad_1_1_coarse_grid_operators_generator_aa502fa1ba4b27424fca4e0ad38b8dda2}
+Class destructor. 
+
+Definition at line 124 of file itk\-Coarse\-Grid\-Operators\-Generator.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classitk_1_1mad_1_1_coarse_grid_operators_generator_ab4819801d640b41202eab1617a001a74}{\index{itk\-::mad\-::\-Coarse\-Grid\-Operators\-Generator@{itk\-::mad\-::\-Coarse\-Grid\-Operators\-Generator}!Generate\-Operators@{Generate\-Operators}}
+\index{Generate\-Operators@{Generate\-Operators}!itk::mad::CoarseGridOperatorsGenerator@{itk\-::mad\-::\-Coarse\-Grid\-Operators\-Generator}}
+\subsubsection[{Generate\-Operators}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ void {\bf itk\-::mad\-::\-Coarse\-Grid\-Operators\-Generator}$<$ V\-Dimension $>$\-::Generate\-Operators (
+\begin{DoxyParamCaption}
+\item[{{\bf Grids\-Hierarchy}$<$ V\-Dimension $>$ $\ast$}]{grids\-Hierarchy, }
+\item[{const {\bf Tensor\-Image\-Type} $\ast$}]{fine\-Tensor, }
+\item[{const {\bf Precision}}]{time\-Step}
+\end{DoxyParamCaption}
+) const}}\label{classitk_1_1mad_1_1_coarse_grid_operators_generator_ab4819801d640b41202eab1617a001a74}
+Main class member, which fills the pointed class grids\-Hierarchy, at each level, using the prescribed operator generation rule. It also needs the tensor on the finest region and the time\-Step, in order to calculate the operator coefficients. 
+
+Definition at line 45 of file itk\-Coarse\-Grid\-Operators\-Generator.\-hxx.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+mad/itk\-Coarse\-Grid\-Operators\-Generator.\-h\item 
+mad/itk\-Coarse\-Grid\-Operators\-Generator.\-hxx\end{DoxyCompactItemize}

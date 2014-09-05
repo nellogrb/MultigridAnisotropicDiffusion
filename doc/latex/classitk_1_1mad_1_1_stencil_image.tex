@@ -1,0 +1,208 @@
+\hypertarget{classitk_1_1mad_1_1_stencil_image}{\section{itk\-:\-:mad\-:\-:Stencil\-Image$<$ T\-Pixel\-Type, V\-Dimension $>$ Class Template Reference}
+\label{classitk_1_1mad_1_1_stencil_image}\index{itk\-::mad\-::\-Stencil\-Image$<$ T\-Pixel\-Type, V\-Dimension $>$@{itk\-::mad\-::\-Stencil\-Image$<$ T\-Pixel\-Type, V\-Dimension $>$}}
+}
+
+
+This class is derived from a specialization of the \hyperlink{class_image}{Image} class, where the Pixel\-Type is defined as a Neighborhood of values\-: it is however templated in order to mimic an \hyperlink{class_image}{Image} class. It is used by the other classes in the I\-T\-K\-Multigrid\-Anisotropic\-Diffusion, and can been interpreted as something similar to a sparse matrix where every row corresponds to a single pixel (i.\-e., a Neighborhood). It also expands the base class, containing a list of active offsets; this is useful in order to easily get the neighbors which need to be visited.  
+
+
+
+
+{\ttfamily \#include $<$itk\-Stencil\-Image.\-h$>$}
+
+
+
+Inheritance diagram for itk\-:\-:mad\-:\-:Stencil\-Image$<$ T\-Pixel\-Type, V\-Dimension $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classitk_1_1mad_1_1_stencil_image__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for itk\-:\-:mad\-:\-:Stencil\-Image$<$ T\-Pixel\-Type, V\-Dimension $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classitk_1_1mad_1_1_stencil_image__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classitk_1_1mad_1_1_stencil_image}{Stencil\-Image} \hyperlink{classitk_1_1mad_1_1_stencil_image_a3cd288ed59c1431bf14b735b995cf58c}{Self}
+\item 
+\hypertarget{classitk_1_1mad_1_1_stencil_image_aaedf6e494e423e4aba74c26d970c2b1f}{typedef \hyperlink{class_image}{Image}$<$ Neighborhood\\*
+$<$ T\-Pixel\-Type, V\-Dimension $>$\\*
+, V\-Dimension $>$ {\bfseries Super\-Class}}\label{classitk_1_1mad_1_1_stencil_image_aaedf6e494e423e4aba74c26d970c2b1f}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_stencil_image_ad40004fa579b36db5e85209e1d559fec}{typedef Smart\-Pointer$<$ \hyperlink{classitk_1_1mad_1_1_stencil_image_a3cd288ed59c1431bf14b735b995cf58c}{Self} $>$ {\bfseries Pointer}}\label{classitk_1_1mad_1_1_stencil_image_ad40004fa579b36db5e85209e1d559fec}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_stencil_image_a36d23e924004565c1294bc8c68d601de}{typedef Smart\-Pointer$<$ const \hyperlink{classitk_1_1mad_1_1_stencil_image_a3cd288ed59c1431bf14b735b995cf58c}{Self} $>$ {\bfseries Const\-Pointer}}\label{classitk_1_1mad_1_1_stencil_image_a36d23e924004565c1294bc8c68d601de}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_stencil_image_ab44e26a599f3e210a5631caefe172732}{typedef Neighborhood\\*
+$<$ T\-Pixel\-Type, V\-Dimension $>$ {\bfseries Stencil\-Type}}\label{classitk_1_1mad_1_1_stencil_image_ab44e26a599f3e210a5631caefe172732}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_stencil_image_a5f68ed1c8592a0570a58ac007a509f11}{typedef \hyperlink{class_image}{Image}$<$ T\-Pixel\-Type, \\*
+V\-Dimension $>$ {\bfseries Image\-Type}}\label{classitk_1_1mad_1_1_stencil_image_a5f68ed1c8592a0570a58ac007a509f11}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_stencil_image_ab9a05a7d77b7149fb84f5699744f9bae}{typedef Image\-Type\-::\-Offset\-Type {\bfseries Offset\-Type}}\label{classitk_1_1mad_1_1_stencil_image_ab9a05a7d77b7149fb84f5699744f9bae}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_stencil_image_aceb14d8286df6cc90aecfedf018866b2}{typedef std\-::list$<$ Offset\-Type $>$ {\bfseries Offset\-List\-Type}}\label{classitk_1_1mad_1_1_stencil_image_aceb14d8286df6cc90aecfedf018866b2}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_stencil_image_a0198ac532d563c49c83b52dbc5666db9}{typedef Image\-Type\-::\-Size\-Type {\bfseries Size\-Type}}\label{classitk_1_1mad_1_1_stencil_image_a0198ac532d563c49c83b52dbc5666db9}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classitk_1_1mad_1_1_stencil_image_a954e0ebaabb189c36354f82542f3acec}{itk\-New\-Macro} (\hyperlink{classitk_1_1mad_1_1_stencil_image_a3cd288ed59c1431bf14b735b995cf58c}{Self})
+\item 
+\hyperlink{classitk_1_1mad_1_1_stencil_image_a951543783bd9bdd9074e569fc72c0dca}{itk\-Type\-Macro} (\hyperlink{classitk_1_1mad_1_1_stencil_image}{Stencil\-Image}, \hyperlink{class_image}{Image})
+\item 
+void \hyperlink{classitk_1_1mad_1_1_stencil_image_a58c14a128e9348f27d64434373d26b90}{Activate\-All\-Offsets} ()
+\item 
+\hyperlink{classitk_1_1mad_1_1_stencil_image_a7680f0a93498d9f39f303160c457c410}{itk\-Get\-Const\-Macro} (Active\-Offset\-List, Offset\-List\-Type)
+\item 
+Offset\-List\-Type\-::size\-\_\-type \hyperlink{classitk_1_1mad_1_1_stencil_image_ab783f408069969cebf420730541bb6a4}{Get\-Active\-Offset\-List\-Size} () const 
+\item 
+\hyperlink{classitk_1_1mad_1_1_stencil_image_abe294bd353e53fcf37cbfb442ae1cfdc}{itk\-Get\-Const\-Macro} (Radius, Size\-Type)
+\item 
+\hyperlink{classitk_1_1mad_1_1_stencil_image_a053e227d7c8891c5dd2e4a0722977694}{itk\-Set\-Macro} (Radius, Size\-Type)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classitk_1_1mad_1_1_stencil_image_a5034dab56f499ea99139b4798ed12a19}{Stencil\-Image} ()
+\item 
+virtual \hyperlink{classitk_1_1mad_1_1_stencil_image_ac8bdf1a707f80129e37a9cf6fcf32650}{$\sim$\-Stencil\-Image} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T\-Pixel\-Type, unsigned int V\-Dimension$>$class itk\-::mad\-::\-Stencil\-Image$<$ T\-Pixel\-Type, V\-Dimension $>$}
+
+This class is derived from a specialization of the \hyperlink{class_image}{Image} class, where the Pixel\-Type is defined as a Neighborhood of values\-: it is however templated in order to mimic an \hyperlink{class_image}{Image} class. It is used by the other classes in the I\-T\-K\-Multigrid\-Anisotropic\-Diffusion, and can been interpreted as something similar to a sparse matrix where every row corresponds to a single pixel (i.\-e., a Neighborhood). It also expands the base class, containing a list of active offsets; this is useful in order to easily get the neighbors which need to be visited. 
+
+\begin{DoxyAuthor}{Author}
+Antonello Gerbi 
+\end{DoxyAuthor}
+
+
+Definition at line 48 of file itk\-Stencil\-Image.\-h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classitk_1_1mad_1_1_stencil_image_a3cd288ed59c1431bf14b735b995cf58c}{\index{itk\-::mad\-::\-Stencil\-Image@{itk\-::mad\-::\-Stencil\-Image}!Self@{Self}}
+\index{Self@{Self}!itk::mad::StencilImage@{itk\-::mad\-::\-Stencil\-Image}}
+\subsubsection[{Self}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\-Pixel\-Type, unsigned int V\-Dimension$>$ typedef {\bf Stencil\-Image} {\bf itk\-::mad\-::\-Stencil\-Image}$<$ T\-Pixel\-Type, V\-Dimension $>$\-::{\bf Self}}}\label{classitk_1_1mad_1_1_stencil_image_a3cd288ed59c1431bf14b735b995cf58c}
+Standard class typedefs. 
+
+Definition at line 53 of file itk\-Stencil\-Image.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classitk_1_1mad_1_1_stencil_image_a5034dab56f499ea99139b4798ed12a19}{\index{itk\-::mad\-::\-Stencil\-Image@{itk\-::mad\-::\-Stencil\-Image}!Stencil\-Image@{Stencil\-Image}}
+\index{Stencil\-Image@{Stencil\-Image}!itk::mad::StencilImage@{itk\-::mad\-::\-Stencil\-Image}}
+\subsubsection[{Stencil\-Image}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\-Pixel\-Type , unsigned int V\-Dimension$>$ {\bf itk\-::mad\-::\-Stencil\-Image}$<$ T\-Pixel\-Type, V\-Dimension $>$\-::{\bf Stencil\-Image} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classitk_1_1mad_1_1_stencil_image_a5034dab56f499ea99139b4798ed12a19}
+Class constructor. 
+
+Definition at line 32 of file itk\-Stencil\-Image.\-hxx.
+
+\hypertarget{classitk_1_1mad_1_1_stencil_image_ac8bdf1a707f80129e37a9cf6fcf32650}{\index{itk\-::mad\-::\-Stencil\-Image@{itk\-::mad\-::\-Stencil\-Image}!$\sim$\-Stencil\-Image@{$\sim$\-Stencil\-Image}}
+\index{$\sim$\-Stencil\-Image@{$\sim$\-Stencil\-Image}!itk::mad::StencilImage@{itk\-::mad\-::\-Stencil\-Image}}
+\subsubsection[{$\sim$\-Stencil\-Image}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\-Pixel\-Type, unsigned int V\-Dimension$>$ virtual {\bf itk\-::mad\-::\-Stencil\-Image}$<$ T\-Pixel\-Type, V\-Dimension $>$\-::$\sim${\bf Stencil\-Image} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classitk_1_1mad_1_1_stencil_image_ac8bdf1a707f80129e37a9cf6fcf32650}
+Class destructor. 
+
+Definition at line 93 of file itk\-Stencil\-Image.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classitk_1_1mad_1_1_stencil_image_a58c14a128e9348f27d64434373d26b90}{\index{itk\-::mad\-::\-Stencil\-Image@{itk\-::mad\-::\-Stencil\-Image}!Activate\-All\-Offsets@{Activate\-All\-Offsets}}
+\index{Activate\-All\-Offsets@{Activate\-All\-Offsets}!itk::mad::StencilImage@{itk\-::mad\-::\-Stencil\-Image}}
+\subsubsection[{Activate\-All\-Offsets}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\-Pixel\-Type , unsigned int V\-Dimension$>$ void {\bf itk\-::mad\-::\-Stencil\-Image}$<$ T\-Pixel\-Type, V\-Dimension $>$\-::Activate\-All\-Offsets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classitk_1_1mad_1_1_stencil_image_a58c14a128e9348f27d64434373d26b90}
+Actives all offsets inside the radius. 
+
+Definition at line 54 of file itk\-Stencil\-Image.\-hxx.
+
+\hypertarget{classitk_1_1mad_1_1_stencil_image_ab783f408069969cebf420730541bb6a4}{\index{itk\-::mad\-::\-Stencil\-Image@{itk\-::mad\-::\-Stencil\-Image}!Get\-Active\-Offset\-List\-Size@{Get\-Active\-Offset\-List\-Size}}
+\index{Get\-Active\-Offset\-List\-Size@{Get\-Active\-Offset\-List\-Size}!itk::mad::StencilImage@{itk\-::mad\-::\-Stencil\-Image}}
+\subsubsection[{Get\-Active\-Offset\-List\-Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\-Pixel\-Type , unsigned int V\-Dimension$>$ {\bf Stencil\-Image}$<$ T\-Pixel\-Type, V\-Dimension $>$\-::Offset\-List\-Type\-::size\-\_\-type {\bf itk\-::mad\-::\-Stencil\-Image}$<$ T\-Pixel\-Type, V\-Dimension $>$\-::Get\-Active\-Offset\-List\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classitk_1_1mad_1_1_stencil_image_ab783f408069969cebf420730541bb6a4}
+Gets the number of active offsets. 
+
+Definition at line 43 of file itk\-Stencil\-Image.\-hxx.
+
+\hypertarget{classitk_1_1mad_1_1_stencil_image_a7680f0a93498d9f39f303160c457c410}{\index{itk\-::mad\-::\-Stencil\-Image@{itk\-::mad\-::\-Stencil\-Image}!itk\-Get\-Const\-Macro@{itk\-Get\-Const\-Macro}}
+\index{itk\-Get\-Const\-Macro@{itk\-Get\-Const\-Macro}!itk::mad::StencilImage@{itk\-::mad\-::\-Stencil\-Image}}
+\subsubsection[{itk\-Get\-Const\-Macro}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\-Pixel\-Type, unsigned int V\-Dimension$>$ {\bf itk\-::mad\-::\-Stencil\-Image}$<$ T\-Pixel\-Type, V\-Dimension $>$\-::itk\-Get\-Const\-Macro (
+\begin{DoxyParamCaption}
+\item[{Active\-Offset\-List}]{, }
+\item[{Offset\-List\-Type}]{}
+\end{DoxyParamCaption}
+)}}\label{classitk_1_1mad_1_1_stencil_image_a7680f0a93498d9f39f303160c457c410}
+Gets the list of active offsets. \hypertarget{classitk_1_1mad_1_1_stencil_image_abe294bd353e53fcf37cbfb442ae1cfdc}{\index{itk\-::mad\-::\-Stencil\-Image@{itk\-::mad\-::\-Stencil\-Image}!itk\-Get\-Const\-Macro@{itk\-Get\-Const\-Macro}}
+\index{itk\-Get\-Const\-Macro@{itk\-Get\-Const\-Macro}!itk::mad::StencilImage@{itk\-::mad\-::\-Stencil\-Image}}
+\subsubsection[{itk\-Get\-Const\-Macro}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\-Pixel\-Type, unsigned int V\-Dimension$>$ {\bf itk\-::mad\-::\-Stencil\-Image}$<$ T\-Pixel\-Type, V\-Dimension $>$\-::itk\-Get\-Const\-Macro (
+\begin{DoxyParamCaption}
+\item[{Radius}]{, }
+\item[{Size\-Type}]{}
+\end{DoxyParamCaption}
+)}}\label{classitk_1_1mad_1_1_stencil_image_abe294bd353e53fcf37cbfb442ae1cfdc}
+Gets the radius of the neighborhood. \hypertarget{classitk_1_1mad_1_1_stencil_image_a954e0ebaabb189c36354f82542f3acec}{\index{itk\-::mad\-::\-Stencil\-Image@{itk\-::mad\-::\-Stencil\-Image}!itk\-New\-Macro@{itk\-New\-Macro}}
+\index{itk\-New\-Macro@{itk\-New\-Macro}!itk::mad::StencilImage@{itk\-::mad\-::\-Stencil\-Image}}
+\subsubsection[{itk\-New\-Macro}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\-Pixel\-Type, unsigned int V\-Dimension$>$ {\bf itk\-::mad\-::\-Stencil\-Image}$<$ T\-Pixel\-Type, V\-Dimension $>$\-::itk\-New\-Macro (
+\begin{DoxyParamCaption}
+\item[{{\bf Self}}]{}
+\end{DoxyParamCaption}
+)}}\label{classitk_1_1mad_1_1_stencil_image_a954e0ebaabb189c36354f82542f3acec}
+Method for creation through the object factory. \hypertarget{classitk_1_1mad_1_1_stencil_image_a053e227d7c8891c5dd2e4a0722977694}{\index{itk\-::mad\-::\-Stencil\-Image@{itk\-::mad\-::\-Stencil\-Image}!itk\-Set\-Macro@{itk\-Set\-Macro}}
+\index{itk\-Set\-Macro@{itk\-Set\-Macro}!itk::mad::StencilImage@{itk\-::mad\-::\-Stencil\-Image}}
+\subsubsection[{itk\-Set\-Macro}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\-Pixel\-Type, unsigned int V\-Dimension$>$ {\bf itk\-::mad\-::\-Stencil\-Image}$<$ T\-Pixel\-Type, V\-Dimension $>$\-::itk\-Set\-Macro (
+\begin{DoxyParamCaption}
+\item[{Radius}]{, }
+\item[{Size\-Type}]{}
+\end{DoxyParamCaption}
+)}}\label{classitk_1_1mad_1_1_stencil_image_a053e227d7c8891c5dd2e4a0722977694}
+Sets the radius of the neighborhood. \hypertarget{classitk_1_1mad_1_1_stencil_image_a951543783bd9bdd9074e569fc72c0dca}{\index{itk\-::mad\-::\-Stencil\-Image@{itk\-::mad\-::\-Stencil\-Image}!itk\-Type\-Macro@{itk\-Type\-Macro}}
+\index{itk\-Type\-Macro@{itk\-Type\-Macro}!itk::mad::StencilImage@{itk\-::mad\-::\-Stencil\-Image}}
+\subsubsection[{itk\-Type\-Macro}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\-Pixel\-Type, unsigned int V\-Dimension$>$ {\bf itk\-::mad\-::\-Stencil\-Image}$<$ T\-Pixel\-Type, V\-Dimension $>$\-::itk\-Type\-Macro (
+\begin{DoxyParamCaption}
+\item[{{\bf Stencil\-Image}$<$ T\-Pixel\-Type, V\-Dimension $>$}]{, }
+\item[{{\bf Image}}]{}
+\end{DoxyParamCaption}
+)}}\label{classitk_1_1mad_1_1_stencil_image_a951543783bd9bdd9074e569fc72c0dca}
+Run-\/time type information (and related methods). 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+mad/itk\-Stencil\-Image.\-h\item 
+mad/itk\-Stencil\-Image.\-hxx\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+<map id="itk::mad::MultigridSmoother&lt; VDimension &gt;" name="itk::mad::MultigridSmoother&lt; VDimension &gt;">
+<area shape="rect" id="node3" href="$classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother.html" title="Gauss Seidel smoother implementation; it is a derived class of MultigridSmoother. It internally uses ..." alt="" coords="239,5,447,51"/>
+<area shape="rect" id="node5" href="$classitk_1_1mad_1_1_multigrid_weighted_jacobi_smoother.html" title="Weighted Jacobi smoother implementation; it is a derived class of MultigridSmoother, and its constructor can optionally take the weight coefficient as an argument, which otherwise defaults to ." alt="" coords="237,74,448,121"/>
+</map>

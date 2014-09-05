@@ -1,0 +1,14 @@
+ObjectType = Image
+NDims = 3
+BinaryData = True
+BinaryDataByteOrderMSB = False
+CompressedData = True
+CompressedDataSize = 367057
+TransformMatrix = -1 0 0 0 -1 0 0 0 1
+Offset = -13.9881 -27.1641 -52.1181
+CenterOfRotation = 0 0 0
+AnatomicalOrientation = LPI
+ElementSpacing = 0.3125 0.3125 0.5
+DimSize = 69 77 69
+ElementType = MET_SHORT
+ElementDataFile = ved_test.zraw

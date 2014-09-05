@@ -1,0 +1,206 @@
+\hypertarget{classitk_1_1mad_1_1_grids_hierarchy}{\section{itk\-:\-:mad\-:\-:Grids\-Hierarchy$<$ V\-Dimension $>$ Class Template Reference}
+\label{classitk_1_1mad_1_1_grids_hierarchy}\index{itk\-::mad\-::\-Grids\-Hierarchy$<$ V\-Dimension $>$@{itk\-::mad\-::\-Grids\-Hierarchy$<$ V\-Dimension $>$}}
+}
+
+
+Class which creates and holds a hierarchy of grids to be used by itk\-Multigrid\-Anisotropic\-Diffusion. It contains informations about each level's grid\-: spacing, region, coarse operator in the form of a pointer to a \hyperlink{classitk_1_1mad_1_1_stencil_image}{Stencil\-Image}, and whether the level was obtained with a vertex centered or a cell centered coarsening (as a convention, level 0 has a vertex centered approach in each direction).  
+
+
+
+
+{\ttfamily \#include $<$itk\-Grids\-Hierarchy.\-h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structitk_1_1mad_1_1_grids_hierarchy_1_1_grid}{Grid}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef double \hyperlink{classitk_1_1mad_1_1_grids_hierarchy_a235005f48422caf216820d2d6b77ca0a}{Precision}
+\item 
+\hypertarget{classitk_1_1mad_1_1_grids_hierarchy_a4ab641bfee5c8ea9389f304ccd23549f}{typedef \hyperlink{classitk_1_1mad_1_1_grids_hierarchy}{Grids\-Hierarchy} {\bfseries Self}}\label{classitk_1_1mad_1_1_grids_hierarchy_a4ab641bfee5c8ea9389f304ccd23549f}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_grids_hierarchy_a2fee3ed525b2cdf4242351e30f6cce52}{typedef \hyperlink{class_image}{Image}$<$ \hyperlink{classitk_1_1mad_1_1_grids_hierarchy_a235005f48422caf216820d2d6b77ca0a}{Precision}, \\*
+V\-Dimension $>$ {\bfseries Image\-Type}}\label{classitk_1_1mad_1_1_grids_hierarchy_a2fee3ed525b2cdf4242351e30f6cce52}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_grids_hierarchy_ac4d01a308c9990adba91abca78a02801}{typedef Neighborhood\\*
+$<$ \hyperlink{classitk_1_1mad_1_1_grids_hierarchy_a235005f48422caf216820d2d6b77ca0a}{Precision}, V\-Dimension $>$ {\bfseries Stencil\-Type}}\label{classitk_1_1mad_1_1_grids_hierarchy_ac4d01a308c9990adba91abca78a02801}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_grids_hierarchy_a2417f54fc9001fb7e239e2472c2249a9}{typedef \hyperlink{classitk_1_1mad_1_1_stencil_image}{Stencil\-Image}\\*
+$<$ \hyperlink{classitk_1_1mad_1_1_grids_hierarchy_a235005f48422caf216820d2d6b77ca0a}{Precision}, V\-Dimension $>$ {\bfseries Stencil\-Image\-Type}}\label{classitk_1_1mad_1_1_grids_hierarchy_a2417f54fc9001fb7e239e2472c2249a9}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_grids_hierarchy_ab7ed42a7ff14b5a2664efdc50a7505b4}{typedef Image\-Region$<$ V\-Dimension $>$ {\bfseries Image\-Region\-Type}}\label{classitk_1_1mad_1_1_grids_hierarchy_ab7ed42a7ff14b5a2664efdc50a7505b4}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_grids_hierarchy_a48978a328db24d5c9aa98c1fe5faca1f}{typedef Image\-Type\-::\-Spacing\-Type {\bfseries Spacing\-Type}}\label{classitk_1_1mad_1_1_grids_hierarchy_a48978a328db24d5c9aa98c1fe5faca1f}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_grids_hierarchy_a8ae9e2ae3fd0eb0bf300af1e2a158df9}{typedef Image\-Type\-::\-Size\-Type {\bfseries Size\-Type}}\label{classitk_1_1mad_1_1_grids_hierarchy_a8ae9e2ae3fd0eb0bf300af1e2a158df9}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_grids_hierarchy_a5fc892f212cd811c07302ffa89cfb93c}{typedef Image\-Type\-::\-Index\-Type {\bfseries Index\-Type}}\label{classitk_1_1mad_1_1_grids_hierarchy_a5fc892f212cd811c07302ffa89cfb93c}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Stencil\-Image\-Type\-::\-Pointer \hyperlink{classitk_1_1mad_1_1_grids_hierarchy_a1fabd3c99e3e7fd81f05f5ceddc35810}{Get\-Coarse\-Operator\-At\-Level} (const unsigned int l) const 
+\item 
+\hyperlink{structitk_1_1mad_1_1_grids_hierarchy_1_1_grid}{Grid} $\ast$ \hyperlink{classitk_1_1mad_1_1_grids_hierarchy_adbe73da5d41fd62a6aa05405e739633b}{Get\-Grid\-At\-Level} (const unsigned int l)
+\item 
+Image\-Type\-::\-Pointer \hyperlink{classitk_1_1mad_1_1_grids_hierarchy_a371729b077c35e3367f6ef3e4efc4865}{Create\-Image\-At\-Level} (const unsigned int l) const 
+\item 
+unsigned int \hyperlink{classitk_1_1mad_1_1_grids_hierarchy_aa1d52d9a52dfd38235f8c78890d457b0}{Get\-Max\-Depth} () const 
+\item 
+Image\-Region\-Type \hyperlink{classitk_1_1mad_1_1_grids_hierarchy_ab993ed3190b19b4554eb718240258dae}{Get\-Region\-At\-Level} (const unsigned int l) const 
+\item 
+Spacing\-Type \hyperlink{classitk_1_1mad_1_1_grids_hierarchy_a2c594f9e3a4888666cafa652443e6b2a}{Get\-Spacing\-At\-Level} (const unsigned int l) const 
+\item 
+std\-::array$<$ bool, V\-Dimension $>$ \hyperlink{classitk_1_1mad_1_1_grids_hierarchy_ac85c588f321ed335bcb282b13afbf05e}{Get\-Vertex\-Centering\-At\-Level} (const unsigned int l) const 
+\item 
+\hyperlink{classitk_1_1mad_1_1_grids_hierarchy_a7189f95878b8489a473b004d86252467}{Grids\-Hierarchy} (const Image\-Region\-Type \&initial\-Region, const Spacing\-Type \&initial\-Spacing)
+\item 
+\hyperlink{classitk_1_1mad_1_1_grids_hierarchy_a334910fb2af63d58e2c77774473c55d6}{$\sim$\-Grids\-Hierarchy} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$unsigned int V\-Dimension$>$class itk\-::mad\-::\-Grids\-Hierarchy$<$ V\-Dimension $>$}
+
+Class which creates and holds a hierarchy of grids to be used by itk\-Multigrid\-Anisotropic\-Diffusion. It contains informations about each level's grid\-: spacing, region, coarse operator in the form of a pointer to a \hyperlink{classitk_1_1mad_1_1_stencil_image}{Stencil\-Image}, and whether the level was obtained with a vertex centered or a cell centered coarsening (as a convention, level 0 has a vertex centered approach in each direction). 
+
+\begin{DoxyAuthor}{Author}
+Antonello Gerbi 
+\end{DoxyAuthor}
+
+
+Definition at line 51 of file itk\-Grids\-Hierarchy.\-h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classitk_1_1mad_1_1_grids_hierarchy_a235005f48422caf216820d2d6b77ca0a}{\index{itk\-::mad\-::\-Grids\-Hierarchy@{itk\-::mad\-::\-Grids\-Hierarchy}!Precision@{Precision}}
+\index{Precision@{Precision}!itk::mad::GridsHierarchy@{itk\-::mad\-::\-Grids\-Hierarchy}}
+\subsubsection[{Precision}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ typedef double {\bf itk\-::mad\-::\-Grids\-Hierarchy}$<$ V\-Dimension $>$\-::{\bf Precision}}}\label{classitk_1_1mad_1_1_grids_hierarchy_a235005f48422caf216820d2d6b77ca0a}
+Standard class typedefs. 
+
+Definition at line 56 of file itk\-Grids\-Hierarchy.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classitk_1_1mad_1_1_grids_hierarchy_a7189f95878b8489a473b004d86252467}{\index{itk\-::mad\-::\-Grids\-Hierarchy@{itk\-::mad\-::\-Grids\-Hierarchy}!Grids\-Hierarchy@{Grids\-Hierarchy}}
+\index{Grids\-Hierarchy@{Grids\-Hierarchy}!itk::mad::GridsHierarchy@{itk\-::mad\-::\-Grids\-Hierarchy}}
+\subsubsection[{Grids\-Hierarchy}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ {\bf itk\-::mad\-::\-Grids\-Hierarchy}$<$ V\-Dimension $>$\-::{\bf Grids\-Hierarchy} (
+\begin{DoxyParamCaption}
+\item[{const Image\-Region\-Type \&}]{initial\-Region, }
+\item[{const Spacing\-Type \&}]{initial\-Spacing}
+\end{DoxyParamCaption}
+)}}\label{classitk_1_1mad_1_1_grids_hierarchy_a7189f95878b8489a473b004d86252467}
+Class constructor. It needs the grid region and the spacing at level 0. 
+
+Definition at line 32 of file itk\-Grids\-Hierarchy.\-hxx.
+
+\hypertarget{classitk_1_1mad_1_1_grids_hierarchy_a334910fb2af63d58e2c77774473c55d6}{\index{itk\-::mad\-::\-Grids\-Hierarchy@{itk\-::mad\-::\-Grids\-Hierarchy}!$\sim$\-Grids\-Hierarchy@{$\sim$\-Grids\-Hierarchy}}
+\index{$\sim$\-Grids\-Hierarchy@{$\sim$\-Grids\-Hierarchy}!itk::mad::GridsHierarchy@{itk\-::mad\-::\-Grids\-Hierarchy}}
+\subsubsection[{$\sim$\-Grids\-Hierarchy}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ {\bf itk\-::mad\-::\-Grids\-Hierarchy}$<$ V\-Dimension $>$\-::$\sim${\bf Grids\-Hierarchy} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classitk_1_1mad_1_1_grids_hierarchy_a334910fb2af63d58e2c77774473c55d6}
+Class destructor. 
+
+Definition at line 111 of file itk\-Grids\-Hierarchy.\-hxx.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classitk_1_1mad_1_1_grids_hierarchy_a371729b077c35e3367f6ef3e4efc4865}{\index{itk\-::mad\-::\-Grids\-Hierarchy@{itk\-::mad\-::\-Grids\-Hierarchy}!Create\-Image\-At\-Level@{Create\-Image\-At\-Level}}
+\index{Create\-Image\-At\-Level@{Create\-Image\-At\-Level}!itk::mad::GridsHierarchy@{itk\-::mad\-::\-Grids\-Hierarchy}}
+\subsubsection[{Create\-Image\-At\-Level}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ {\bf Grids\-Hierarchy}$<$ V\-Dimension $>$\-::Image\-Type\-::\-Pointer {\bf itk\-::mad\-::\-Grids\-Hierarchy}$<$ V\-Dimension $>$\-::Create\-Image\-At\-Level (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{l}
+\end{DoxyParamCaption}
+) const}}\label{classitk_1_1mad_1_1_grids_hierarchy_a371729b077c35e3367f6ef3e4efc4865}
+Creates an empty (allocated but not initialized) defined on level l, and returns a pointer to it. 
+
+Definition at line 188 of file itk\-Grids\-Hierarchy.\-hxx.
+
+\hypertarget{classitk_1_1mad_1_1_grids_hierarchy_a1fabd3c99e3e7fd81f05f5ceddc35810}{\index{itk\-::mad\-::\-Grids\-Hierarchy@{itk\-::mad\-::\-Grids\-Hierarchy}!Get\-Coarse\-Operator\-At\-Level@{Get\-Coarse\-Operator\-At\-Level}}
+\index{Get\-Coarse\-Operator\-At\-Level@{Get\-Coarse\-Operator\-At\-Level}!itk::mad::GridsHierarchy@{itk\-::mad\-::\-Grids\-Hierarchy}}
+\subsubsection[{Get\-Coarse\-Operator\-At\-Level}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ {\bf Grids\-Hierarchy}$<$ V\-Dimension $>$\-::Stencil\-Image\-Type\-::\-Pointer {\bf itk\-::mad\-::\-Grids\-Hierarchy}$<$ V\-Dimension $>$\-::Get\-Coarse\-Operator\-At\-Level (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{l}
+\end{DoxyParamCaption}
+) const}}\label{classitk_1_1mad_1_1_grids_hierarchy_a1fabd3c99e3e7fd81f05f5ceddc35810}
+Returns pointer to the coarse operator at level l. 
+
+Definition at line 166 of file itk\-Grids\-Hierarchy.\-hxx.
+
+\hypertarget{classitk_1_1mad_1_1_grids_hierarchy_adbe73da5d41fd62a6aa05405e739633b}{\index{itk\-::mad\-::\-Grids\-Hierarchy@{itk\-::mad\-::\-Grids\-Hierarchy}!Get\-Grid\-At\-Level@{Get\-Grid\-At\-Level}}
+\index{Get\-Grid\-At\-Level@{Get\-Grid\-At\-Level}!itk::mad::GridsHierarchy@{itk\-::mad\-::\-Grids\-Hierarchy}}
+\subsubsection[{Get\-Grid\-At\-Level}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ {\bf Grids\-Hierarchy}$<$ V\-Dimension $>$\-::{\bf Grid} $\ast$ {\bf itk\-::mad\-::\-Grids\-Hierarchy}$<$ V\-Dimension $>$\-::Get\-Grid\-At\-Level (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{l}
+\end{DoxyParamCaption}
+)}}\label{classitk_1_1mad_1_1_grids_hierarchy_adbe73da5d41fd62a6aa05405e739633b}
+Returns pointer to the grid raw data at level l. 
+
+Definition at line 133 of file itk\-Grids\-Hierarchy.\-hxx.
+
+\hypertarget{classitk_1_1mad_1_1_grids_hierarchy_aa1d52d9a52dfd38235f8c78890d457b0}{\index{itk\-::mad\-::\-Grids\-Hierarchy@{itk\-::mad\-::\-Grids\-Hierarchy}!Get\-Max\-Depth@{Get\-Max\-Depth}}
+\index{Get\-Max\-Depth@{Get\-Max\-Depth}!itk::mad::GridsHierarchy@{itk\-::mad\-::\-Grids\-Hierarchy}}
+\subsubsection[{Get\-Max\-Depth}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ unsigned int {\bf itk\-::mad\-::\-Grids\-Hierarchy}$<$ V\-Dimension $>$\-::Get\-Max\-Depth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classitk_1_1mad_1_1_grids_hierarchy_aa1d52d9a52dfd38235f8c78890d457b0}
+Returns the maximum depth of the hierarchy. 
+
+Definition at line 122 of file itk\-Grids\-Hierarchy.\-hxx.
+
+\hypertarget{classitk_1_1mad_1_1_grids_hierarchy_ab993ed3190b19b4554eb718240258dae}{\index{itk\-::mad\-::\-Grids\-Hierarchy@{itk\-::mad\-::\-Grids\-Hierarchy}!Get\-Region\-At\-Level@{Get\-Region\-At\-Level}}
+\index{Get\-Region\-At\-Level@{Get\-Region\-At\-Level}!itk::mad::GridsHierarchy@{itk\-::mad\-::\-Grids\-Hierarchy}}
+\subsubsection[{Get\-Region\-At\-Level}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ {\bf Grids\-Hierarchy}$<$ V\-Dimension $>$\-::Image\-Region\-Type {\bf itk\-::mad\-::\-Grids\-Hierarchy}$<$ V\-Dimension $>$\-::Get\-Region\-At\-Level (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{l}
+\end{DoxyParamCaption}
+) const}}\label{classitk_1_1mad_1_1_grids_hierarchy_ab993ed3190b19b4554eb718240258dae}
+Returns the region at level l. 
+
+Definition at line 144 of file itk\-Grids\-Hierarchy.\-hxx.
+
+\hypertarget{classitk_1_1mad_1_1_grids_hierarchy_a2c594f9e3a4888666cafa652443e6b2a}{\index{itk\-::mad\-::\-Grids\-Hierarchy@{itk\-::mad\-::\-Grids\-Hierarchy}!Get\-Spacing\-At\-Level@{Get\-Spacing\-At\-Level}}
+\index{Get\-Spacing\-At\-Level@{Get\-Spacing\-At\-Level}!itk::mad::GridsHierarchy@{itk\-::mad\-::\-Grids\-Hierarchy}}
+\subsubsection[{Get\-Spacing\-At\-Level}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ {\bf Grids\-Hierarchy}$<$ V\-Dimension $>$\-::Spacing\-Type {\bf itk\-::mad\-::\-Grids\-Hierarchy}$<$ V\-Dimension $>$\-::Get\-Spacing\-At\-Level (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{l}
+\end{DoxyParamCaption}
+) const}}\label{classitk_1_1mad_1_1_grids_hierarchy_a2c594f9e3a4888666cafa652443e6b2a}
+Returns the spacing at level l. 
+
+Definition at line 155 of file itk\-Grids\-Hierarchy.\-hxx.
+
+\hypertarget{classitk_1_1mad_1_1_grids_hierarchy_ac85c588f321ed335bcb282b13afbf05e}{\index{itk\-::mad\-::\-Grids\-Hierarchy@{itk\-::mad\-::\-Grids\-Hierarchy}!Get\-Vertex\-Centering\-At\-Level@{Get\-Vertex\-Centering\-At\-Level}}
+\index{Get\-Vertex\-Centering\-At\-Level@{Get\-Vertex\-Centering\-At\-Level}!itk::mad::GridsHierarchy@{itk\-::mad\-::\-Grids\-Hierarchy}}
+\subsubsection[{Get\-Vertex\-Centering\-At\-Level}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ std\-::array$<$ bool, V\-Dimension $>$ {\bf itk\-::mad\-::\-Grids\-Hierarchy}$<$ V\-Dimension $>$\-::Get\-Vertex\-Centering\-At\-Level (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{l}
+\end{DoxyParamCaption}
+) const}}\label{classitk_1_1mad_1_1_grids_hierarchy_ac85c588f321ed335bcb282b13afbf05e}
+Returns pointer to the coarse operator at level l. 
+
+Definition at line 177 of file itk\-Grids\-Hierarchy.\-hxx.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+mad/itk\-Grids\-Hierarchy.\-h\item 
+mad/itk\-Grids\-Hierarchy.\-hxx\end{DoxyCompactItemize}

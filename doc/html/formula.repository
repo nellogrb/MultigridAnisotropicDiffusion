@@ -1,0 +1,19 @@
+\form#0:\[ \partial_t I(\mathbf{x}, t) - \mathrm{div} \left( M(\mathbf{x}) \nabla I(\mathbf{x}, t) \right) = 0 \]
+\form#1:$ A_h, A_{2h}, A_{4h}, \dots $
+\form#2:\begin{eqnarray*} & I^{n+1}(\mathbf{x}) - \Delta t \sum \limits_{r=1}^d \left( \sum \limits_{s=1}^d \frac{m_{sr}(\mathbf{x} + \mathbf{e}_s) - m_{sr}(\mathbf{x} - \mathbf{e}_s)}{2h_s} \right) \frac{I^{n+1}(\mathbf{x} + \mathbf{e}_r) - I^{n+1}(\mathbf{x} - \mathbf{e}_r)}{2h_r} \\ & - \Delta t \sum \limits_{s \neq r,\, s,r=1}^d m_{sr}(\mathbf{x}) \frac{I^{n+1}(\mathbf{x} + \mathbf{e}_s + \mathbf{e}_r) - I^{n+1}(\mathbf{x} + \mathbf{e}_s - \mathbf{e}_r) - I^{n+1}(\mathbf{x} - \mathbf{e}_s + \mathbf{e}_r) + I^{n+1}(\mathbf{x} - \mathbf{e}_s - \mathbf{e}_r) }{4h_s h_r} \\ & - \Delta t \sum \limits_{r=1}^d m_{rr}(\mathbf{x}) \frac{I^{n+1}(\mathbf{x} + \mathbf{e}_r ) - 2I^{n+1}(\mathbf{x}) + I^{n+1}(\mathbf{x} - \mathbf{e}_r ) }{h^2_r} = I^n(\mathbf{x}), \end{eqnarray*}
+\form#3:$ \mathbf{x} $
+\form#4:$ \mathbf{e}_p $
+\form#5:$ p $
+\form#6:$ A_{2h} $
+\form#7:\[ A_{2h} = R_h^{2h} A_h I_{2h}^h \]
+\form#8:$ A_h $
+\form#9:$ A_{2h} = \sum \limits_i A^i_{2h} $
+\form#10:\[ A^i_{2h} = R_h^{2h} A_h I_{2h}^h \mathbf{y}_i \]
+\form#11:$ \mathbf{y}_i $
+\form#12:\[ A x = b \]
+\form#13:$ x $
+\form#14:$ A x = b$
+\form#15:$ b $
+\form#16:$ A $
+\form#17:$ r = b - A x $
+\form#18:$ \frac{2}{3} $

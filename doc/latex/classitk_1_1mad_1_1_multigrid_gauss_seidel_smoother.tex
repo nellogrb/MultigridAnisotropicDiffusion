@@ -1,0 +1,174 @@
+\hypertarget{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother}{\section{itk\-:\-:mad\-:\-:Multigrid\-Gauss\-Seidel\-Smoother$<$ V\-Dimension $>$ Class Template Reference}
+\label{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother}\index{itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother$<$ V\-Dimension $>$@{itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother$<$ V\-Dimension $>$}}
+}
+
+
+Gauss Seidel smoother implementation; it is a derived class of \hyperlink{classitk_1_1mad_1_1_multigrid_smoother}{Multigrid\-Smoother}. It internally uses a lexicographic ordering of the points.  
+
+
+
+
+{\ttfamily \#include $<$itk\-Multigrid\-Gauss\-Seidel\-Smoother.\-h$>$}
+
+
+
+Inheritance diagram for itk\-:\-:mad\-:\-:Multigrid\-Gauss\-Seidel\-Smoother$<$ V\-Dimension $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for itk\-:\-:mad\-:\-:Multigrid\-Gauss\-Seidel\-Smoother$<$ V\-Dimension $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef double \hyperlink{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a317b3e06f245f2953ea8a6bb2fe01500}{Precision}
+\item 
+\hypertarget{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a7ea983c1815cfd251c9b027ae5b67c96}{typedef \\*
+\hyperlink{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother}{Multigrid\-Gauss\-Seidel\-Smoother} {\bfseries Self}}\label{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a7ea983c1815cfd251c9b027ae5b67c96}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a1a75d5f5179b5c19d8cea51945e8a305}{typedef \hyperlink{class_image}{Image}$<$ \hyperlink{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a317b3e06f245f2953ea8a6bb2fe01500}{Precision}, \\*
+V\-Dimension $>$ {\bfseries Image\-Type}}\label{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a1a75d5f5179b5c19d8cea51945e8a305}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_af9f0888d73a32ebee321962a846ccc5b}{typedef Neighborhood\\*
+$<$ \hyperlink{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a317b3e06f245f2953ea8a6bb2fe01500}{Precision}, V\-Dimension $>$ {\bfseries Stencil\-Type}}\label{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_af9f0888d73a32ebee321962a846ccc5b}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a28861e612bc8d787bb300024b77da55a}{typedef \hyperlink{classitk_1_1mad_1_1_stencil_image}{Stencil\-Image}\\*
+$<$ \hyperlink{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a317b3e06f245f2953ea8a6bb2fe01500}{Precision}, V\-Dimension $>$ {\bfseries Stencil\-Image\-Type}}\label{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a28861e612bc8d787bb300024b77da55a}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a28c14e90449ab800803266d8a2f22bb6}{typedef Image\-Region$<$ V\-Dimension $>$ {\bfseries Image\-Region\-Type}}\label{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a28c14e90449ab800803266d8a2f22bb6}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a8c6d141ea223ed36e49c478581bd46be}{typedef Image\-Type\-::\-Spacing\-Type {\bfseries Spacing\-Type}}\label{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a8c6d141ea223ed36e49c478581bd46be}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a10a527038fbe1a15719bee4eb6964e7a}{typedef Image\-Type\-::\-Size\-Type {\bfseries Size\-Type}}\label{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a10a527038fbe1a15719bee4eb6964e7a}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_abc4ba9247d66a1f715240e5bf092ddb8}{typedef Image\-Type\-::\-Index\-Type {\bfseries Index\-Type}}\label{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_abc4ba9247d66a1f715240e5bf092ddb8}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_af282c18a17a2d1f95304aea786cc5a9f}{typedef Image\-Type\-::\-Offset\-Type {\bfseries Offset\-Type}}\label{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_af282c18a17a2d1f95304aea786cc5a9f}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a6bc4af1c0d41e026330ccb9acdff2794}{typedef std\-::list$<$ Offset\-Type $>$ {\bfseries Offset\-List\-Type}}\label{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a6bc4af1c0d41e026330ccb9acdff2794}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Image\-Type\-::\-Pointer \hyperlink{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a4c4efcf4c1d207014ec08a58f05cbea4}{Single\-Iteration} (const \hyperlink{class_image}{Image\-Type} $\ast$input\-Image, const \hyperlink{class_image}{Image\-Type} $\ast$rhs\-Image, const \hyperlink{classitk_1_1mad_1_1_stencil_image}{Stencil\-Image\-Type} $\ast$matrix\-Image) const 
+\item 
+Image\-Type\-::\-Pointer \hyperlink{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a918b18641139d9e0cb99f97e751e2103}{Compute\-Residual} (const \hyperlink{class_image}{Image\-Type} $\ast$input\-Image, const \hyperlink{class_image}{Image\-Type} $\ast$rhs\-Image, const \hyperlink{classitk_1_1mad_1_1_stencil_image}{Stencil\-Image\-Type} $\ast$matrix\-Image) const 
+\item 
+\hyperlink{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a5ac6b70226e4af8bdfd115ffb52ab5ac}{Multigrid\-Gauss\-Seidel\-Smoother} ()
+\item 
+\hyperlink{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_af85c0d56057fe68365a6b6b4c45f7698}{$\sim$\-Multigrid\-Gauss\-Seidel\-Smoother} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$unsigned int V\-Dimension$>$class itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother$<$ V\-Dimension $>$}
+
+Gauss Seidel smoother implementation; it is a derived class of \hyperlink{classitk_1_1mad_1_1_multigrid_smoother}{Multigrid\-Smoother}. It internally uses a lexicographic ordering of the points. 
+
+\begin{DoxyAuthor}{Author}
+Antonello Gerbi 
+\end{DoxyAuthor}
+
+
+Definition at line 42 of file itk\-Multigrid\-Gauss\-Seidel\-Smoother.\-h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a317b3e06f245f2953ea8a6bb2fe01500}{\index{itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother@{itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother}!Precision@{Precision}}
+\index{Precision@{Precision}!itk::mad::MultigridGaussSeidelSmoother@{itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother}}
+\subsubsection[{Precision}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ typedef double {\bf itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother}$<$ V\-Dimension $>$\-::{\bf Precision}}}\label{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a317b3e06f245f2953ea8a6bb2fe01500}
+Standard class typedefs. 
+
+Definition at line 47 of file itk\-Multigrid\-Gauss\-Seidel\-Smoother.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a5ac6b70226e4af8bdfd115ffb52ab5ac}{\index{itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother@{itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother}!Multigrid\-Gauss\-Seidel\-Smoother@{Multigrid\-Gauss\-Seidel\-Smoother}}
+\index{Multigrid\-Gauss\-Seidel\-Smoother@{Multigrid\-Gauss\-Seidel\-Smoother}!itk::mad::MultigridGaussSeidelSmoother@{itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother}}
+\subsubsection[{Multigrid\-Gauss\-Seidel\-Smoother}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ {\bf itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother}$<$ V\-Dimension $>$\-::{\bf Multigrid\-Gauss\-Seidel\-Smoother} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a5ac6b70226e4af8bdfd115ffb52ab5ac}
+Class constructor 
+
+Definition at line 185 of file itk\-Multigrid\-Gauss\-Seidel\-Smoother.\-hxx.
+
+\hypertarget{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_af85c0d56057fe68365a6b6b4c45f7698}{\index{itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother@{itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother}!$\sim$\-Multigrid\-Gauss\-Seidel\-Smoother@{$\sim$\-Multigrid\-Gauss\-Seidel\-Smoother}}
+\index{$\sim$\-Multigrid\-Gauss\-Seidel\-Smoother@{$\sim$\-Multigrid\-Gauss\-Seidel\-Smoother}!itk::mad::MultigridGaussSeidelSmoother@{itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother}}
+\subsubsection[{$\sim$\-Multigrid\-Gauss\-Seidel\-Smoother}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ {\bf itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother}$<$ V\-Dimension $>$\-::$\sim${\bf Multigrid\-Gauss\-Seidel\-Smoother} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_af85c0d56057fe68365a6b6b4c45f7698}
+Class destructor. 
+
+Definition at line 193 of file itk\-Multigrid\-Gauss\-Seidel\-Smoother.\-hxx.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a918b18641139d9e0cb99f97e751e2103}{\index{itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother@{itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother}!Compute\-Residual@{Compute\-Residual}}
+\index{Compute\-Residual@{Compute\-Residual}!itk::mad::MultigridGaussSeidelSmoother@{itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother}}
+\subsubsection[{Compute\-Residual}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ {\bf Multigrid\-Gauss\-Seidel\-Smoother}$<$ V\-Dimension $>$\-::Image\-Type\-::\-Pointer {\bf itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother}$<$ V\-Dimension $>$\-::Compute\-Residual (
+\begin{DoxyParamCaption}
+\item[{const {\bf Image\-Type} $\ast$}]{input\-Image, }
+\item[{const {\bf Image\-Type} $\ast$}]{rhs\-Image, }
+\item[{const {\bf Stencil\-Image\-Type} $\ast$}]{matrix\-Image}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a918b18641139d9e0cb99f97e751e2103}
+Returns the residual $ r = b - A x $, where input\-Image is the term $ x $, rhs\-Image is $ b $, and matrix\-Image the matrix $ A $. 
+
+Implements \hyperlink{classitk_1_1mad_1_1_multigrid_smoother_a7b90d4fbff488ad00ed0bd680913f227}{itk\-::mad\-::\-Multigrid\-Smoother$<$ V\-Dimension $>$}.
+
+
+
+Definition at line 117 of file itk\-Multigrid\-Gauss\-Seidel\-Smoother.\-hxx.
+
+\hypertarget{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a4c4efcf4c1d207014ec08a58f05cbea4}{\index{itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother@{itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother}!Single\-Iteration@{Single\-Iteration}}
+\index{Single\-Iteration@{Single\-Iteration}!itk::mad::MultigridGaussSeidelSmoother@{itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother}}
+\subsubsection[{Single\-Iteration}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ {\bf Multigrid\-Gauss\-Seidel\-Smoother}$<$ V\-Dimension $>$\-::Image\-Type\-::\-Pointer {\bf itk\-::mad\-::\-Multigrid\-Gauss\-Seidel\-Smoother}$<$ V\-Dimension $>$\-::Single\-Iteration (
+\begin{DoxyParamCaption}
+\item[{const {\bf Image\-Type} $\ast$}]{input\-Image, }
+\item[{const {\bf Image\-Type} $\ast$}]{rhs\-Image, }
+\item[{const {\bf Stencil\-Image\-Type} $\ast$}]{matrix\-Image}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classitk_1_1mad_1_1_multigrid_gauss_seidel_smoother_a4c4efcf4c1d207014ec08a58f05cbea4}
+Returns the approximated solution to problem $ A x = b$ after one iteration of the smoother, starting with input\-Image as initial guess, rhs\-Image as the right hand side $ b $, and matrix\-Image as matrix $ A $ in Stencil\-Image\-Type format. 
+
+Implements \hyperlink{classitk_1_1mad_1_1_multigrid_smoother_a1163b85294e86ee03990020bc81fe465}{itk\-::mad\-::\-Multigrid\-Smoother$<$ V\-Dimension $>$}.
+
+
+
+Definition at line 36 of file itk\-Multigrid\-Gauss\-Seidel\-Smoother.\-hxx.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+mad/itk\-Multigrid\-Gauss\-Seidel\-Smoother.\-h\item 
+mad/itk\-Multigrid\-Gauss\-Seidel\-Smoother.\-hxx\end{DoxyCompactItemize}

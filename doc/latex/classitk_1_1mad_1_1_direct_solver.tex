@@ -1,0 +1,132 @@
+\hypertarget{classitk_1_1mad_1_1_direct_solver}{\section{itk\-:\-:mad\-:\-:Direct\-Solver$<$ V\-Dimension $>$ Class Template Reference}
+\label{classitk_1_1mad_1_1_direct_solver}\index{itk\-::mad\-::\-Direct\-Solver$<$ V\-Dimension $>$@{itk\-::mad\-::\-Direct\-Solver$<$ V\-Dimension $>$}}
+}
+
+
+Implementation of a direct solver to be used on the coarsest grid for problem.  
+
+
+
+
+{\ttfamily \#include $<$itk\-Direct\-Solver.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef double \hyperlink{classitk_1_1mad_1_1_direct_solver_a352048c2b5b60e880b2d63c700df82ad}{Precision}
+\item 
+\hypertarget{classitk_1_1mad_1_1_direct_solver_a2f4037f255f7e1a683fe850856dc26a4}{typedef \hyperlink{classitk_1_1mad_1_1_direct_solver}{Direct\-Solver} {\bfseries Self}}\label{classitk_1_1mad_1_1_direct_solver_a2f4037f255f7e1a683fe850856dc26a4}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_direct_solver_a9c6a10512e51568cf6d4e95749f8d933}{typedef Neighborhood\\*
+$<$ \hyperlink{classitk_1_1mad_1_1_direct_solver_a352048c2b5b60e880b2d63c700df82ad}{Precision}, V\-Dimension $>$ {\bfseries Stencil\-Type}}\label{classitk_1_1mad_1_1_direct_solver_a9c6a10512e51568cf6d4e95749f8d933}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_direct_solver_aac772c5caef076e12a96e9e066334c1d}{typedef \hyperlink{classitk_1_1mad_1_1_stencil_image}{Stencil\-Image}\\*
+$<$ \hyperlink{classitk_1_1mad_1_1_direct_solver_a352048c2b5b60e880b2d63c700df82ad}{Precision}, V\-Dimension $>$ {\bfseries Stencil\-Image\-Type}}\label{classitk_1_1mad_1_1_direct_solver_aac772c5caef076e12a96e9e066334c1d}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_direct_solver_a78da312b919002bfc3b8e133dcebfa92}{typedef \hyperlink{class_image}{Image}$<$ \hyperlink{classitk_1_1mad_1_1_direct_solver_a352048c2b5b60e880b2d63c700df82ad}{Precision}, \\*
+V\-Dimension $>$ {\bfseries Image\-Type}}\label{classitk_1_1mad_1_1_direct_solver_a78da312b919002bfc3b8e133dcebfa92}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_direct_solver_a1ced8d5af7e8d6dd9ca9874c417d61ec}{typedef Image\-Region$<$ V\-Dimension $>$ {\bfseries Image\-Region\-Type}}\label{classitk_1_1mad_1_1_direct_solver_a1ced8d5af7e8d6dd9ca9874c417d61ec}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_direct_solver_aa906038c251c5fe5c2f7cd4f3b27c0d9}{typedef Image\-Type\-::\-Spacing\-Type {\bfseries Spacing\-Type}}\label{classitk_1_1mad_1_1_direct_solver_aa906038c251c5fe5c2f7cd4f3b27c0d9}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_direct_solver_a21fed6981e4a82d907a7413c58648884}{typedef Image\-Type\-::\-Size\-Type {\bfseries Size\-Type}}\label{classitk_1_1mad_1_1_direct_solver_a21fed6981e4a82d907a7413c58648884}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_direct_solver_a17f02f4595b0fd5f6cf293c6cc69f8c1}{typedef Image\-Type\-::\-Index\-Type {\bfseries Index\-Type}}\label{classitk_1_1mad_1_1_direct_solver_a17f02f4595b0fd5f6cf293c6cc69f8c1}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_direct_solver_a76fbf4ab15dd72352d1d2837c6a8a9aa}{typedef Image\-Type\-::\-Offset\-Type {\bfseries Offset\-Type}}\label{classitk_1_1mad_1_1_direct_solver_a76fbf4ab15dd72352d1d2837c6a8a9aa}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_direct_solver_a8c38d1fb0578ff7681daba69a2a0f0f1}{typedef vnl\-\_\-sparse\-\_\-lu {\bfseries Solver\-Type}}\label{classitk_1_1mad_1_1_direct_solver_a8c38d1fb0578ff7681daba69a2a0f0f1}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Image\-Type\-::\-Pointer \hyperlink{classitk_1_1mad_1_1_direct_solver_a2bc09207502e7a20e41aa2a5a46c30a2}{Solve} (const \hyperlink{class_image}{Image\-Type} $\ast$rhs\-Image) const 
+\item 
+\hyperlink{classitk_1_1mad_1_1_direct_solver_a3231acea6a141f7dc17c0baff95c2907}{Direct\-Solver} (const \hyperlink{classitk_1_1mad_1_1_stencil_image}{Stencil\-Image\-Type} $\ast$matrix\-Image)
+\item 
+\hyperlink{classitk_1_1mad_1_1_direct_solver_a119e00614a1091b40786888be7bb6c59}{$\sim$\-Direct\-Solver} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$unsigned int V\-Dimension$>$class itk\-::mad\-::\-Direct\-Solver$<$ V\-Dimension $>$}
+
+Implementation of a direct solver to be used on the coarsest grid for problem. 
+
+\[ A x = b \]
+
+It internally converts the \hyperlink{class_image}{Image} and \hyperlink{classitk_1_1mad_1_1_stencil_image}{Stencil\-Image} objects to vnl objects vectors and matrix in order to use the class vnl\-\_\-sparse\-\_\-lu; the conversion of the matrix and its L\-U decomposition is generated and stored at construction time, and is available for every subsequent step to avoid unnecessary computations.
+
+\begin{DoxyAuthor}{Author}
+Antonello Gerbi 
+\end{DoxyAuthor}
+
+
+Definition at line 52 of file itk\-Direct\-Solver.\-h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classitk_1_1mad_1_1_direct_solver_a352048c2b5b60e880b2d63c700df82ad}{\index{itk\-::mad\-::\-Direct\-Solver@{itk\-::mad\-::\-Direct\-Solver}!Precision@{Precision}}
+\index{Precision@{Precision}!itk::mad::DirectSolver@{itk\-::mad\-::\-Direct\-Solver}}
+\subsubsection[{Precision}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ typedef double {\bf itk\-::mad\-::\-Direct\-Solver}$<$ V\-Dimension $>$\-::{\bf Precision}}}\label{classitk_1_1mad_1_1_direct_solver_a352048c2b5b60e880b2d63c700df82ad}
+Standard class typedefs. 
+
+Definition at line 57 of file itk\-Direct\-Solver.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classitk_1_1mad_1_1_direct_solver_a3231acea6a141f7dc17c0baff95c2907}{\index{itk\-::mad\-::\-Direct\-Solver@{itk\-::mad\-::\-Direct\-Solver}!Direct\-Solver@{Direct\-Solver}}
+\index{Direct\-Solver@{Direct\-Solver}!itk::mad::DirectSolver@{itk\-::mad\-::\-Direct\-Solver}}
+\subsubsection[{Direct\-Solver}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ {\bf itk\-::mad\-::\-Direct\-Solver}$<$ V\-Dimension $>$\-::{\bf Direct\-Solver} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Stencil\-Image\-Type} $\ast$}]{matrix\-Image}
+\end{DoxyParamCaption}
+)}}\label{classitk_1_1mad_1_1_direct_solver_a3231acea6a141f7dc17c0baff95c2907}
+Class constructor, which converts matrix\-Image to the matrix $ A $ and computes its L\-U decomposition. 
+
+Definition at line 34 of file itk\-Direct\-Solver.\-hxx.
+
+\hypertarget{classitk_1_1mad_1_1_direct_solver_a119e00614a1091b40786888be7bb6c59}{\index{itk\-::mad\-::\-Direct\-Solver@{itk\-::mad\-::\-Direct\-Solver}!$\sim$\-Direct\-Solver@{$\sim$\-Direct\-Solver}}
+\index{$\sim$\-Direct\-Solver@{$\sim$\-Direct\-Solver}!itk::mad::DirectSolver@{itk\-::mad\-::\-Direct\-Solver}}
+\subsubsection[{$\sim$\-Direct\-Solver}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ {\bf itk\-::mad\-::\-Direct\-Solver}$<$ V\-Dimension $>$\-::$\sim${\bf Direct\-Solver} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classitk_1_1mad_1_1_direct_solver_a119e00614a1091b40786888be7bb6c59}
+Class destructor. 
+
+Definition at line 82 of file itk\-Direct\-Solver.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classitk_1_1mad_1_1_direct_solver_a2bc09207502e7a20e41aa2a5a46c30a2}{\index{itk\-::mad\-::\-Direct\-Solver@{itk\-::mad\-::\-Direct\-Solver}!Solve@{Solve}}
+\index{Solve@{Solve}!itk::mad::DirectSolver@{itk\-::mad\-::\-Direct\-Solver}}
+\subsubsection[{Solve}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ {\bf Direct\-Solver}$<$ V\-Dimension $>$\-::Image\-Type\-::\-Pointer {\bf itk\-::mad\-::\-Direct\-Solver}$<$ V\-Dimension $>$\-::Solve (
+\begin{DoxyParamCaption}
+\item[{const {\bf Image\-Type} $\ast$}]{rhs\-Image}
+\end{DoxyParamCaption}
+) const}}\label{classitk_1_1mad_1_1_direct_solver_a2bc09207502e7a20e41aa2a5a46c30a2}
+Method returning the solution $ x $ of problem $ A x = b$, where rhs\-Image corresponds to term $ b $. 
+
+Definition at line 94 of file itk\-Direct\-Solver.\-hxx.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+mad/itk\-Direct\-Solver.\-h\item 
+mad/itk\-Direct\-Solver.\-hxx\end{DoxyCompactItemize}

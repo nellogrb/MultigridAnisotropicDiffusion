@@ -1,0 +1,153 @@
+\hypertarget{classitk_1_1mad_1_1_inter_grid_operators}{\section{itk\-:\-:mad\-:\-:Inter\-Grid\-Operators$<$ V\-Dimension $>$ Class Template Reference}
+\label{classitk_1_1mad_1_1_inter_grid_operators}\index{itk\-::mad\-::\-Inter\-Grid\-Operators$<$ V\-Dimension $>$@{itk\-::mad\-::\-Inter\-Grid\-Operators$<$ V\-Dimension $>$}}
+}
+
+
+Class implementation of the two inter grid operators. It has to be initialized with an array prescribing which kind of coarsening has to be used between the two grids on each direction\-: vertex centered vs cell centered. It does not need other informations on the grids, as they are extracted from the input image when Interpolation or Restriction are called.  
+
+
+
+
+{\ttfamily \#include $<$itk\-Inter\-Grid\-Operators.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classitk_1_1mad_1_1_inter_grid_operators_a7dfcf280f70ae36e4860d8d962f4a05d}{Point\-Position\-Type} \{ {\bfseries left}, 
+{\bfseries interior}, 
+{\bfseries right}
+ \}
+\item 
+typedef double \hyperlink{classitk_1_1mad_1_1_inter_grid_operators_ade61ab9b171ac4b689489cb14d3bde7d}{Precision}
+\item 
+\hypertarget{classitk_1_1mad_1_1_inter_grid_operators_a55328ff18ed00cabde49d578ce4cec2d}{typedef \hyperlink{classitk_1_1mad_1_1_inter_grid_operators}{Inter\-Grid\-Operators} {\bfseries Self}}\label{classitk_1_1mad_1_1_inter_grid_operators_a55328ff18ed00cabde49d578ce4cec2d}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_inter_grid_operators_a6d5bdce33c32c798359046b3baa4658d}{typedef \hyperlink{class_image}{Image}$<$ \hyperlink{classitk_1_1mad_1_1_inter_grid_operators_ade61ab9b171ac4b689489cb14d3bde7d}{Precision}, \\*
+V\-Dimension $>$ {\bfseries Image\-Type}}\label{classitk_1_1mad_1_1_inter_grid_operators_a6d5bdce33c32c798359046b3baa4658d}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_inter_grid_operators_ac0d30ff94e6b2d266ebbccb1994e3eb5}{typedef Neighborhood\\*
+$<$ \hyperlink{classitk_1_1mad_1_1_inter_grid_operators_ade61ab9b171ac4b689489cb14d3bde7d}{Precision}, V\-Dimension $>$ {\bfseries Stencil\-Type}}\label{classitk_1_1mad_1_1_inter_grid_operators_ac0d30ff94e6b2d266ebbccb1994e3eb5}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_inter_grid_operators_a7221885e733f0b64c02f1975517e8e51}{typedef Image\-Region$<$ V\-Dimension $>$ {\bfseries Image\-Region\-Type}}\label{classitk_1_1mad_1_1_inter_grid_operators_a7221885e733f0b64c02f1975517e8e51}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_inter_grid_operators_a9fce7d83a2d10d6c06db2e36dc6e1eca}{typedef Image\-Type\-::\-Spacing\-Type {\bfseries Spacing\-Type}}\label{classitk_1_1mad_1_1_inter_grid_operators_a9fce7d83a2d10d6c06db2e36dc6e1eca}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_inter_grid_operators_aae9b6fe92d7ff591d1eb14584a52a36e}{typedef Image\-Type\-::\-Size\-Type {\bfseries Size\-Type}}\label{classitk_1_1mad_1_1_inter_grid_operators_aae9b6fe92d7ff591d1eb14584a52a36e}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_inter_grid_operators_ad3726bb2b8dee0d8a53c5fe66a45dbfa}{typedef Image\-Type\-::\-Index\-Type {\bfseries Index\-Type}}\label{classitk_1_1mad_1_1_inter_grid_operators_ad3726bb2b8dee0d8a53c5fe66a45dbfa}
+
+\item 
+\hypertarget{classitk_1_1mad_1_1_inter_grid_operators_ad9296508483355dcc2b4cbeb9cf53842}{typedef Image\-Type\-::\-Offset\-Type {\bfseries Offset\-Type}}\label{classitk_1_1mad_1_1_inter_grid_operators_ad9296508483355dcc2b4cbeb9cf53842}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classitk_1_1mad_1_1_inter_grid_operators_ad55220f99bb3317126f3aec19be4c70c}{Inter\-Grid\-Operators} (const std\-::array$<$ bool, V\-Dimension $>$ \&vertex\-Centering)
+\item 
+\hyperlink{classitk_1_1mad_1_1_inter_grid_operators_a9ae3dcea3ec15339e389163153bc9656}{$\sim$\-Inter\-Grid\-Operators} ()
+\item 
+Image\-Type\-::\-Pointer \hyperlink{classitk_1_1mad_1_1_inter_grid_operators_a970d50f9b0a8d3815654d36362abfce5}{Interpolation} (const \hyperlink{class_image}{Image\-Type} $\ast$input\-Image, const bool $\ast$ignore\-Left\-Border=nullptr, const bool $\ast$ignore\-Right\-Border=nullptr) const 
+\item 
+Image\-Type\-::\-Pointer \hyperlink{classitk_1_1mad_1_1_inter_grid_operators_ae99632c351ddaa07d311141c3eb8cd21}{Restriction} (const \hyperlink{class_image}{Image\-Type} $\ast$input\-Image, const bool $\ast$ignore\-Left\-Border=nullptr, const bool $\ast$ignore\-Right\-Border=nullptr) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$unsigned int V\-Dimension$>$class itk\-::mad\-::\-Inter\-Grid\-Operators$<$ V\-Dimension $>$}
+
+Class implementation of the two inter grid operators. It has to be initialized with an array prescribing which kind of coarsening has to be used between the two grids on each direction\-: vertex centered vs cell centered. It does not need other informations on the grids, as they are extracted from the input image when Interpolation or Restriction are called. 
+
+\begin{DoxyAuthor}{Author}
+Antonello Gerbi 
+\end{DoxyAuthor}
+
+
+Definition at line 48 of file itk\-Inter\-Grid\-Operators.\-h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classitk_1_1mad_1_1_inter_grid_operators_ade61ab9b171ac4b689489cb14d3bde7d}{\index{itk\-::mad\-::\-Inter\-Grid\-Operators@{itk\-::mad\-::\-Inter\-Grid\-Operators}!Precision@{Precision}}
+\index{Precision@{Precision}!itk::mad::InterGridOperators@{itk\-::mad\-::\-Inter\-Grid\-Operators}}
+\subsubsection[{Precision}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ typedef double {\bf itk\-::mad\-::\-Inter\-Grid\-Operators}$<$ V\-Dimension $>$\-::{\bf Precision}}}\label{classitk_1_1mad_1_1_inter_grid_operators_ade61ab9b171ac4b689489cb14d3bde7d}
+Standard class typedefs. 
+
+Definition at line 53 of file itk\-Inter\-Grid\-Operators.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classitk_1_1mad_1_1_inter_grid_operators_a7dfcf280f70ae36e4860d8d962f4a05d}{\index{itk\-::mad\-::\-Inter\-Grid\-Operators@{itk\-::mad\-::\-Inter\-Grid\-Operators}!Point\-Position\-Type@{Point\-Position\-Type}}
+\index{Point\-Position\-Type@{Point\-Position\-Type}!itk::mad::InterGridOperators@{itk\-::mad\-::\-Inter\-Grid\-Operators}}
+\subsubsection[{Point\-Position\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ enum {\bf itk\-::mad\-::\-Inter\-Grid\-Operators\-::\-Point\-Position\-Type}}}\label{classitk_1_1mad_1_1_inter_grid_operators_a7dfcf280f70ae36e4860d8d962f4a05d}
+Characterization of a point based on its position relative to the interior of the image region. 
+
+Definition at line 66 of file itk\-Inter\-Grid\-Operators.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classitk_1_1mad_1_1_inter_grid_operators_ad55220f99bb3317126f3aec19be4c70c}{\index{itk\-::mad\-::\-Inter\-Grid\-Operators@{itk\-::mad\-::\-Inter\-Grid\-Operators}!Inter\-Grid\-Operators@{Inter\-Grid\-Operators}}
+\index{Inter\-Grid\-Operators@{Inter\-Grid\-Operators}!itk::mad::InterGridOperators@{itk\-::mad\-::\-Inter\-Grid\-Operators}}
+\subsubsection[{Inter\-Grid\-Operators}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ {\bf itk\-::mad\-::\-Inter\-Grid\-Operators}$<$ V\-Dimension $>$\-::{\bf Inter\-Grid\-Operators} (
+\begin{DoxyParamCaption}
+\item[{const std\-::array$<$ bool, V\-Dimension $>$ \&}]{vertex\-Centering}
+\end{DoxyParamCaption}
+)}}\label{classitk_1_1mad_1_1_inter_grid_operators_ad55220f99bb3317126f3aec19be4c70c}
+Class constructor which takes as argument whether the coarse grid is obtained via vertex centered versus cell centered approach. 
+
+Definition at line 37 of file itk\-Inter\-Grid\-Operators.\-hxx.
+
+\hypertarget{classitk_1_1mad_1_1_inter_grid_operators_a9ae3dcea3ec15339e389163153bc9656}{\index{itk\-::mad\-::\-Inter\-Grid\-Operators@{itk\-::mad\-::\-Inter\-Grid\-Operators}!$\sim$\-Inter\-Grid\-Operators@{$\sim$\-Inter\-Grid\-Operators}}
+\index{$\sim$\-Inter\-Grid\-Operators@{$\sim$\-Inter\-Grid\-Operators}!itk::mad::InterGridOperators@{itk\-::mad\-::\-Inter\-Grid\-Operators}}
+\subsubsection[{$\sim$\-Inter\-Grid\-Operators}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ {\bf itk\-::mad\-::\-Inter\-Grid\-Operators}$<$ V\-Dimension $>$\-::$\sim${\bf Inter\-Grid\-Operators} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classitk_1_1mad_1_1_inter_grid_operators_a9ae3dcea3ec15339e389163153bc9656}
+Class destructor. 
+
+Definition at line 73 of file itk\-Inter\-Grid\-Operators.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classitk_1_1mad_1_1_inter_grid_operators_a970d50f9b0a8d3815654d36362abfce5}{\index{itk\-::mad\-::\-Inter\-Grid\-Operators@{itk\-::mad\-::\-Inter\-Grid\-Operators}!Interpolation@{Interpolation}}
+\index{Interpolation@{Interpolation}!itk::mad::InterGridOperators@{itk\-::mad\-::\-Inter\-Grid\-Operators}}
+\subsubsection[{Interpolation}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ {\bf Inter\-Grid\-Operators}$<$ V\-Dimension $>$\-::Image\-Type\-::\-Pointer {\bf itk\-::mad\-::\-Inter\-Grid\-Operators}$<$ V\-Dimension $>$\-::Interpolation (
+\begin{DoxyParamCaption}
+\item[{const {\bf Image\-Type} $\ast$}]{input\-Image, }
+\item[{const bool $\ast$}]{ignore\-Left\-Border = {\ttfamily nullptr}, }
+\item[{const bool $\ast$}]{ignore\-Right\-Border = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+) const}}\label{classitk_1_1mad_1_1_inter_grid_operators_a970d50f9b0a8d3815654d36362abfce5}
+Interpolation operator. It optionally accepts an array whose boolean values prescribe if the border points, on the left and right side of each direction, has to be restricted with the same stencil as that of interior points. 
+
+Definition at line 48 of file itk\-Inter\-Grid\-Operators.\-hxx.
+
+\hypertarget{classitk_1_1mad_1_1_inter_grid_operators_ae99632c351ddaa07d311141c3eb8cd21}{\index{itk\-::mad\-::\-Inter\-Grid\-Operators@{itk\-::mad\-::\-Inter\-Grid\-Operators}!Restriction@{Restriction}}
+\index{Restriction@{Restriction}!itk::mad::InterGridOperators@{itk\-::mad\-::\-Inter\-Grid\-Operators}}
+\subsubsection[{Restriction}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int V\-Dimension$>$ {\bf Inter\-Grid\-Operators}$<$ V\-Dimension $>$\-::Image\-Type\-::\-Pointer {\bf itk\-::mad\-::\-Inter\-Grid\-Operators}$<$ V\-Dimension $>$\-::Restriction (
+\begin{DoxyParamCaption}
+\item[{const {\bf Image\-Type} $\ast$}]{input\-Image, }
+\item[{const bool $\ast$}]{ignore\-Left\-Border = {\ttfamily nullptr}, }
+\item[{const bool $\ast$}]{ignore\-Right\-Border = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+) const}}\label{classitk_1_1mad_1_1_inter_grid_operators_ae99632c351ddaa07d311141c3eb8cd21}
+Restriction operator. It optionally accepts an array whose boolean values prescribe if the border points, on the left and right side of each direction, has to be restricted with the same stencil as that of interior points. 
+
+Definition at line 181 of file itk\-Inter\-Grid\-Operators.\-hxx.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+mad/itk\-Inter\-Grid\-Operators.\-h\item 
+mad/itk\-Inter\-Grid\-Operators.\-hxx\end{DoxyCompactItemize}
