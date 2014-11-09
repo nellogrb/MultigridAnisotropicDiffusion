@@ -38,7 +38,6 @@ MultigridAnisotropicDiffusionImageFilter< TInputImage, TOutputImage, TSmootherTy
 ::MultigridAnisotropicDiffusionImageFilter() :
   m_TimeStep( 0.01 ),
   m_NumberOfSteps( 1 ),
-  m_CoarseGridOperator( mad::CoarseGridOperatorsGenerator< TInputImage::ImageDimension >::CoarseGridOperatorType::DCA ),
   m_Cycle( VCYCLE ),
   m_IterationsPerGrid( 2 ),
   m_Tolerance( 1e-6 ),
@@ -140,14 +139,14 @@ MultigridAnisotropicDiffusionImageFilter< TInputImage, TOutputImage, TSmootherTy
 
 
   // Generating grids hierarchy
-  m_Grids = new GridsHierarchyType( rhsImage->GetLargestPossibleRegion(), rhsImage->GetSpacing() );
+  m_Grids = new GridsHierarchyType( rhsImage->GetLargestPossibleRegion(), rhsImage->GetSpacing(), m_DiffusionTensor, m_TimeStep );
 
   m_CoarsestLevel = m_Grids->GetMaxDepth();
 
 
   // Generating coarse operators
-  CoarseGridOperatorsGeneratorType coarseOperatorsGenerator( m_CoarseGridOperator );
-  coarseOperatorsGenerator.GenerateOperators( m_Grids, m_DiffusionTensor, m_TimeStep );
+  //CoarseGridOperatorsGeneratorType coarseOperatorsGenerator( m_CoarseGridOperator );
+  //coarseOperatorsGenerator.GenerateOperators( m_Grids, m_DiffusionTensor, m_TimeStep );
 
 
   // Creating direct solver on the coarsest level. At the same time, the direct solver

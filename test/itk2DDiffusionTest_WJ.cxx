@@ -96,21 +96,21 @@ int itk2DDiffusionTest_WJ( int argc, char * argv[] )
   filter->SetMaxCycles( 100 );
   filter->SetTolerance( 1e-10 );
 
-  typedef filterType::CoarseGridOperatorType coarseOperatorType;
-  coarseOperatorType coarseOperator = filterType::CoarseGridOperatorType::DCA;
+  //typedef filterType::CoarseGridOperatorType coarseOperatorType;
+  //coarseOperatorType coarseOperator = filterType::CoarseGridOperatorType::DCA;
 
-  if ( std::strcmp( argv[ 1 ], "gca" ) == 0 )
-    coarseOperator = filterType::CoarseGridOperatorType::GCA;
+  //if ( std::strcmp( argv[ 1 ], "gca" ) == 0 )
+  //  coarseOperator = filterType::CoarseGridOperatorType::GCA;
 
   typedef filterType::CycleType cycleType;
   cycleType cycle = filterType::CycleType::VCYCLE;
 
-  if ( std::strcmp( argv[ 2 ], "fmg" ) == 0 )
+  if ( std::strcmp( argv[ 1 ], "fmg" ) == 0 )
     cycle = filterType::CycleType::FMG;
-  else if ( std::strcmp( argv[ 2 ], "s" ) == 0 )
+  else if ( std::strcmp( argv[ 1 ], "s" ) == 0 )
     cycle = filterType::CycleType::SMOOTHER;
 
-  filter->SetCoarseGridOperator( coarseOperator );
+  //filter->SetCoarseGridOperator( coarseOperator );
   filter->SetCycle( cycle );
 
   filter->Update();

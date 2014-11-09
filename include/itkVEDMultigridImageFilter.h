@@ -38,8 +38,6 @@ namespace itk
  * R Manniesing, MA Viergever, WJ Niessen, <em>Vessel enhancing diffusion: A scale space representation of vessel structures</em>,
  * Medical Image Analysis 10(6), 815-825.
  *
- * \author Antonello Gerbi
- *
  * \ingroup ITKMultigridAnisotropicDiffusion
  */
 template < class TInputImage, class TOutputImage,
@@ -77,7 +75,6 @@ public:
                                                     InternalImageType,
                                                     TSmootherType >                   MADFilterType;
 
-  typedef typename MADFilterType::CoarseGridOperatorType                              CoarseGridOperatorType;
   typedef typename MADFilterType::CycleType                                           CycleType;
 
 
@@ -99,7 +96,6 @@ public:
   itkSetMacro( DiffusionIterations, unsigned int );
 
   /** Setters for MAD parameters. */
-  itkSetMacro( CoarseGridOperator, CoarseGridOperatorType );
   itkSetMacro( Cycle, CycleType );
   itkSetMacro( TimeStep, Precision );
   itkSetMacro( Tolerance, Precision );
@@ -135,7 +131,6 @@ private:
   unsigned int                                   m_Iterations;
   unsigned int                                   m_DiffusionIterations;
 
-  CoarseGridOperatorType                         m_CoarseGridOperator;
   CycleType                                      m_Cycle;
   Precision                                      m_TimeStep;
   Precision                                      m_Tolerance;

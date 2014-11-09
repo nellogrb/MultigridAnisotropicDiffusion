@@ -34,8 +34,8 @@ namespace mad
 
 template < unsigned int VDimension >
 InterGridOperators< VDimension >
-::InterGridOperators( const std::array< bool, VDimension > & vertexCentering ):
-  m_VertexCentering( vertexCentering )
+::InterGridOperators( const std::array< CoarseGridCenteringType, VDimension > & centering ):
+  m_Centering( centering )
 {
 
 
@@ -45,7 +45,7 @@ InterGridOperators< VDimension >
 template < unsigned int VDimension >
 typename InterGridOperators< VDimension >::ImageType::Pointer
 InterGridOperators< VDimension >
-::Interpolation( const ImageType * inputImage, const bool * ignoreLeftBorder, const bool * ignoreRightBorder ) const
+::Interpolation( const ImageType * inputImage ) const
 {
 
   // Computing useful variables
@@ -62,7 +62,7 @@ InterGridOperators< VDimension >
     {
 
       outputSpacing[ d ] = inputSpacing[ d ] / 2;
-      if ( m_VertexCentering[ d ] == true ) outputSize[ d ] = ( inputSize[ d ] - 1 ) * 2 + 1;
+      if ( m_Centering[ d ] == vertex ) outputSize[ d ] = ( inputSize[ d ] - 1 ) * 2 + 1;
       else outputSize[ d ] = inputSize[ d ] * 2;
 
     }
@@ -143,11 +143,8 @@ InterGridOperators< VDimension >
 
         pointPosition[ d ] = interior;
 
-        if ( ( ignoreLeftBorder == NULL || ignoreLeftBorder[ d ] == false ) && inputIndex[ d ] == 0 )
-          pointPosition[ d ] = left;
-
-        if ( ( ignoreRightBorder == NULL || ignoreRightBorder[ d ] == false ) && inputRegion.GetSize( d ) - inputIndex[ d ] == 1 )
-          pointPosition[ d ] = right;
+        if ( inputIndex[ d ] == 0 ) pointPosition[ d ] = left;
+        else if ( inputRegion.GetSize( d ) - inputIndex[ d ] == 1 ) pointPosition[ d ] = right;
 
         }
 
@@ -178,7 +175,7 @@ InterGridOperators< VDimension >
 template < unsigned int VDimension >
 typename InterGridOperators< VDimension >::ImageType::Pointer
 InterGridOperators< VDimension >
-::Restriction( const ImageType * inputImage, const bool * ignoreLeftBorder, const bool * ignoreRightBorder ) const
+::Restriction( const ImageType * inputImage ) const
 {
 
   // Computing useful variables
@@ -195,7 +192,7 @@ InterGridOperators< VDimension >
     {
 
       outputSpacing[ d ] = inputSpacing[ d ] * 2;
-      if ( m_VertexCentering[ d ] == true ) outputSize[ d ] = ( inputSize[ d ] - 1 ) / 2 + 1;
+      if ( m_Centering[ d ] == vertex ) outputSize[ d ] = ( inputSize[ d ] - 1 ) / 2 + 1;
       else outputSize[ d ] = inputSize[ d ] / 2;
 
     }
@@ -278,11 +275,8 @@ InterGridOperators< VDimension >
 
         pointPosition[ d ] = interior;
 
-        if ( ( ignoreLeftBorder == NULL || ignoreLeftBorder[ d ] == false ) && outputIndex[ d ] == 0 )
-          pointPosition[ d ] = left;
-
-        if ( ( ignoreRightBorder == NULL || ignoreRightBorder[ d ] == false ) && outputSize[ d ] - outputIndex[ d ] == 1 )
-          pointPosition[ d ] = right;
+        if ( outputIndex[ d ] == 0 ) pointPosition[ d ] = left;
+        else if ( outputSize[ d ] - outputIndex[ d ] == 1 ) pointPosition[ d ] = right;
 
         }
 
@@ -322,7 +316,7 @@ InterGridOperators< VDimension >
   SizeType stencilRadius;
 
   for ( unsigned int d = 0; d < VDimension; ++d )
-    ( m_VertexCentering[ d ] == true ) ? stencilRadius[ d ] = 1 : stencilRadius[ d ] = 2;
+    ( m_Centering[ d ] == vertex ) ? stencilRadius[ d ] = 1 : stencilRadius[ d ] = 2;
 
   StencilType outputStencil;
   outputStencil.SetRadius( stencilRadius );
@@ -341,7 +335,7 @@ InterGridOperators< VDimension >
     for ( unsigned int d = 0; d < VDimension; ++d )
       {
 
-        if ( m_VertexCentering[ d ] == true )
+        if ( m_Centering[ d ] == vertex )
           value *= ( vertexStencils1D.at( pointPosition[ d ] ) )[ offsetFromOrigin[ d ] ];
 
         else

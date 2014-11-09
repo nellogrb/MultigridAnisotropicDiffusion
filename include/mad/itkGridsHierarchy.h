@@ -22,8 +22,10 @@
 
 #include "itkImage.h"
 #include "itkImageRegion.h"
+#include "itkSymmetricSecondRankTensor.h"
 
 #include "itkStencilImage.h"
+#include "itkInterGridOperators.h"
 
 
 namespace itk
@@ -53,17 +55,23 @@ class ITK_EXPORT GridsHierarchy
 public:
 
   /** Standard class typedefs. */
-  typedef double                                                           Precision;
-  typedef GridsHierarchy                                                   Self;
+  typedef double                                                                    Precision;
+  typedef GridsHierarchy                                                            Self;
 
-  typedef Image< Precision, VDimension >                                   ImageType;
-  typedef Neighborhood< Precision, VDimension >                            StencilType;
-  typedef StencilImage< Precision, VDimension >                            StencilImageType;
+  typedef Image< Precision, VDimension >                                            ImageType;
+  typedef Neighborhood< Precision, VDimension >                                     StencilType;
+  typedef StencilImage< Precision, VDimension >                                     StencilImageType;
+  typedef SymmetricSecondRankTensor< Precision, VDimension >                        TensorType;
+  typedef Image< TensorType, VDimension >                                           TensorImageType;
+  typedef mad::InterGridOperators< VDimension >                                     InterGridOperatorsType;
 
-  typedef ImageRegion< VDimension >                                        ImageRegionType;
-  typedef typename ImageType::SpacingType                                  SpacingType;
-  typedef typename ImageType::SizeType                                     SizeType;
-  typedef typename ImageType::IndexType                                    IndexType;
+  typedef ImageRegion< VDimension >                                                 ImageRegionType;
+  typedef typename ImageType::SpacingType                                           SpacingType;
+  typedef typename ImageType::SizeType                                              SizeType;
+  typedef typename ImageType::IndexType                                             IndexType;
+  typedef typename ImageType::OffsetType                                            OffsetType;
+
+  typedef typename InterGridOperators< VDimension >::CoarseGridCenteringType        CoarseGridCenteringType;
 
   /** Raw data structure for each level */
   struct Grid {
@@ -71,7 +79,7 @@ public:
     ImageRegionType                                             g_Region;
     SpacingType                                                 g_Spacing;
     typename StencilImageType::Pointer                          g_CoarseOperator;
-    std::array< bool, VDimension >                              g_VertexCentered;
+    std::array< CoarseGridCenteringType, VDimension >           g_Centering;
 
   };
 
@@ -95,10 +103,11 @@ public:
   SpacingType GetSpacingAtLevel( const unsigned int l ) const;
 
   /** Returns pointer to the coarse operator at level l. */
-  std::array< bool, VDimension > GetVertexCenteringAtLevel( const unsigned int l ) const;
+  std::array< CoarseGridCenteringType, VDimension > GetVertexCenteringAtLevel( const unsigned int l ) const;
 
   /** Class constructor. It needs the grid region and the spacing at level 0. */
-  GridsHierarchy( const ImageRegionType & initialRegion, const SpacingType & initialSpacing );
+  GridsHierarchy( const ImageRegionType & initialRegion, const SpacingType & initialSpacing,
+                  const TensorImageType * fineTensor, const Precision timeStep );
 
   /** Class destructor. */
   ~GridsHierarchy();
@@ -107,6 +116,11 @@ private:
 
   Grid *                           m_GridLevels;
   unsigned int                     m_MaxDepth;
+
+  /** Direct Coarse Approximation implementation. */
+  void GenerateDCA( Grid * grid,
+                    const TensorImageType * tensor,
+                    const Precision timeStep ) const;
 
   /** Purposely not implemented */
   GridsHierarchy( const Self & );

@@ -61,38 +61,34 @@ public:
   typedef typename ImageType::IndexType                                          IndexType;
   typedef typename ImageType::OffsetType                                         OffsetType;
 
-  /** Characterization of a point based on its position relative to the interior
+  //typedef GridsHierarchy< VDimension >                                           GridsHierarchyType;
+  //typedef typename GridsHierarchyType::CoarseGridCenteringType                   CoarseGridCenteringType;
+
+  /** Characterization of the coarsening */
+  enum CoarseGridCenteringType { vertex, cell };
+
+  /** Characterization of a point, based on its position relative to the interior
    *  of the image region. */
   enum PointPositionType { left, interior, right };
 
   /** Class constructor which takes as argument whether the coarse grid is obtained
    * via vertex centered versus cell centered approach. */
-  InterGridOperators( const std::array< bool, VDimension > & vertexCentering );
+  InterGridOperators( const std::array< CoarseGridCenteringType, VDimension > & centering );
 
   /** Class destructor. */
   ~InterGridOperators() {};
 
-  /** Interpolation operator. It optionally accepts an array whose
-   *  boolean values prescribe if the border points, on the left and right
-   *  side of each direction, has to be restricted with the same stencil
-   *  as that of interior points. */
-  typename ImageType::Pointer Interpolation( const ImageType * inputImage,
-                                             const bool * ignoreLeftBorder = nullptr,
-                                             const bool * ignoreRightBorder = nullptr ) const;
+  /** Interpolation operator. */
+  typename ImageType::Pointer Interpolation( const ImageType * inputImage ) const;
 
-  /** Restriction operator. It optionally accepts an array whose
-   *  boolean values prescribe if the border points, on the left and right
-   *  side of each direction, has to be restricted with the same stencil
-   *  as that of interior points. */
-  typename ImageType::Pointer Restriction( const ImageType * inputImage,
-                                           const bool * ignoreLeftBorder = nullptr,
-                                           const bool * ignoreRightBorder = nullptr ) const;
+  /** Restriction operator. */
+  typename ImageType::Pointer Restriction( const ImageType * inputImage ) const;
 
 
 private:
 
   /** Approach used in each direction. */
-  std::array< bool, VDimension > m_VertexCentering;
+  std::array< CoarseGridCenteringType, VDimension > m_Centering;
 
   /** Utility function to generate stencils used by both interpolation and restriction.
    *  This is achieved by composition of the 1-dimensional stencils vertexCentered1D and

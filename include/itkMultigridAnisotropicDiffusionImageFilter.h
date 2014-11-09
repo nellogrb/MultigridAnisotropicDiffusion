@@ -24,7 +24,7 @@
 #include "mad/itkStencilImage.h"
 #include "mad/itkGridsHierarchy.h"
 #include "mad/itkInterGridOperators.h"
-#include "mad/itkCoarseGridOperatorsGenerator.h"
+//#include "mad/itkCoarseGridOperatorsGenerator.h"
 #include "mad/itkMultigridGaussSeidelSmoother.h"
 #include "mad/itkDirectSolver.h"
 
@@ -116,9 +116,6 @@ public:
   typedef mad::StencilImage< InternalPixelType, TInputImage::ImageDimension >                        StencilImageType;
   typedef typename mad::GridsHierarchy< TInputImage::ImageDimension >                                GridsHierarchyType;
   typedef typename mad::InterGridOperators< TInputImage::ImageDimension >                            InterGridOperatorsType;
-  typedef typename mad::CoarseGridOperatorsGenerator< TInputImage::ImageDimension >                  CoarseGridOperatorsGeneratorType;
-  typedef typename mad::CoarseGridOperatorsGenerator< TInputImage::ImageDimension >
-                      ::CoarseGridOperatorType                                                       CoarseGridOperatorType;
   typedef typename mad::DirectSolver< TInputImage::ImageDimension >                                  DirectSolverType;
 
   typedef InternalPixelType                                                                          Precision;
@@ -130,11 +127,6 @@ public:
 
   /** Run-time type information (and related methods). */
   itkTypeMacro( MultigridAnisotropicDiffusionImageFilter, ImageToImageFilter );
-
-  /** Sets the type of coarse grid operator to be built by the
-   * class CoarseGridOperatorsGenerator. CoarseGridOperatorType is
-   * an enum with DCA and GCA as possible values. */
-  itkSetMacro( CoarseGridOperator, CoarseGridOperatorType );
 
   /** Sets the type of cycle to be executed. CycleType is
    *  an enum with VCYCLE, FMG and SMOOTHER as possible values */
@@ -188,7 +180,6 @@ private:
   Precision                                         m_TimeStep;
 
   unsigned int                                      m_NumberOfSteps;
-  CoarseGridOperatorType                            m_CoarseGridOperator;
   CycleType                                         m_Cycle;
   unsigned int                                      m_IterationsPerGrid;
   Precision                                         m_Tolerance;

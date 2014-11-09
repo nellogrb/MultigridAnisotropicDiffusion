@@ -52,7 +52,6 @@ VEDMultigridImageFilter< TInputImage, TOutputImage, TSmootherType >
   m_Sensitivity( 10. ),
   m_Iterations( 1 ),
   m_DiffusionIterations( 5 ),
-  m_CoarseGridOperator( mad::CoarseGridOperatorsGenerator< TInputImage::ImageDimension >::CoarseGridOperatorType::DCA ),
   m_Cycle( MADFilterType::CycleType::VCYCLE ),
   m_TimeStep( 0.1 ),
   m_Tolerance( 1e-6 ),
@@ -404,7 +403,6 @@ VEDMultigridImageFilter< TInputImage, TOutputImage, TSmootherType >
   diffusionFilter->SetTolerance( m_Tolerance );
   diffusionFilter->SetNumberOfSteps( m_DiffusionIterations );
   diffusionFilter->SetIterationsPerGrid( m_DiffusionIterationsPerGrid );
-  diffusionFilter->SetCoarseGridOperator( m_CoarseGridOperator );
   diffusionFilter->SetCycle( m_Cycle );
   diffusionFilter->SetMaxCycles( 100 );
 
