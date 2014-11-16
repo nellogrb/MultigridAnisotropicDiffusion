@@ -24,3 +24,7 @@ CMakeLists.txt.user*
 
 # back-up files when conflicts occur
 *.orig
+
+# Eclipse files
+.project
+.settings/
