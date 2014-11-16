@@ -488,6 +488,31 @@ GridsHierarchy< VDimension >
   grid->g_CoarseOperator->SetRadius( diffusionRadius );
   grid->g_CoarseOperator->ActivateAllOffsets();
 
+
+  // Removing useless offsets from active list in the 3D case
+  if ( VDimension == 3 )
+  {
+    typedef std::list< OffsetType > OffsetListType;
+    OffsetListType activeOffsets = grid->g_CoarseOperator->GetActiveOffsetList();
+    bool remove;
+
+    for ( typename OffsetListType::iterator activeOffsetsIterator = activeOffsets.begin();
+          activeOffsetsIterator != activeOffsets.end(); ++activeOffsetsIterator )
+    {
+
+      remove = true;
+
+      for ( unsigned int d = 0; d < VDimension; ++d )
+      {
+        if ( ( *activeOffsetsIterator )[ d ] == 0 ) remove = false;
+      }
+
+      if ( remove ) grid->g_CoarseOperator->DeactivateOffset( *activeOffsetsIterator );
+
+    }
+  }
+
+
 }
 
 } // end namespace mad

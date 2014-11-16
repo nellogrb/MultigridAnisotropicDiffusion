@@ -21,6 +21,7 @@
 #include "itkNeighborhood.h"
 #include "itkImage.h"
 #include <list>
+#include <algorithm>
 
 namespace itk
 {
@@ -76,6 +77,12 @@ public:
 
   /** Gets the number of active offsets. */
   typename OffsetListType::size_type GetActiveOffsetListSize () const;
+
+  /** Activates selected offset. */
+  void ActivateOffset ( const OffsetType & offset );
+
+  /** Deactivates selected offset. */
+  void DeactivateOffset ( const OffsetType & offset );
 
   /** Gets the radius of the neighborhood. */
   itkGetConstMacro( Radius, SizeType );

@@ -67,6 +67,30 @@ StencilImage< TPixelType, VDimension >
 }
 
 
+template < class TPixelType, unsigned int VDimension >
+void
+StencilImage< TPixelType, VDimension >
+::ActivateOffset ( const OffsetType & offset )
+{
+
+  typename OffsetListType::iterator offsetListIterator;
+  offsetListIterator = std::find ( m_ActiveOffsetList.begin(), m_ActiveOffsetList.end(), offset );
+  if ( offsetListIterator == m_ActiveOffsetList.end() ) m_ActiveOffsetList.push_back( offset );
+
+}
+
+
+template < class TPixelType, unsigned int VDimension >
+void
+StencilImage< TPixelType, VDimension >
+::DeactivateOffset ( const OffsetType & offset )
+{
+
+  m_ActiveOffsetList.remove( offset );
+
+}
+
+
 } // end namespace mad
 
 } // end namespace itk

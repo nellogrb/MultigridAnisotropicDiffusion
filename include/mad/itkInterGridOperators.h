@@ -61,9 +61,6 @@ public:
   typedef typename ImageType::IndexType                                          IndexType;
   typedef typename ImageType::OffsetType                                         OffsetType;
 
-  //typedef GridsHierarchy< VDimension >                                           GridsHierarchyType;
-  //typedef typename GridsHierarchyType::CoarseGridCenteringType                   CoarseGridCenteringType;
-
   /** Characterization of the coarsening */
   enum CoarseGridCenteringType { vertex, cell };
 
