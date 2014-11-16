@@ -28,3 +28,4 @@ CMakeLists.txt.user*
 # Eclipse files
 .project
 .settings/
+.cproject
