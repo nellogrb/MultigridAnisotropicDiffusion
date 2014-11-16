@@ -159,10 +159,6 @@ public:
    *  InternalPixelPrecision. */
   void SetDiffusionTensor( const InputTensorImageType * inputTensor );
 
-  /** Sets the input image, whose elements are internally casted to
-   *  InternalPixelPrecision. */
-  void SetInput( const InputImageType * inputImage );
-
 protected:
 
   /** Class constructor. */

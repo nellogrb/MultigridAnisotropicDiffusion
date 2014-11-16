@@ -30,17 +30,6 @@ namespace itk
 {
 
 template < class TInputImage, class TOutputImage, class TSmootherType >
-void
-VEDMultigridImageFilter< TInputImage, TOutputImage, TSmootherType >
-::SetInput( const InputImageType * inputImage )
-{
-
-  this->ProcessObject::SetNthInput( 0, const_cast< InputImageType * >( inputImage ) );
-
-}
-
-
-template < class TInputImage, class TOutputImage, class TSmootherType >
 VEDMultigridImageFilter< TInputImage, TOutputImage, TSmootherType >
 ::VEDMultigridImageFilter() :
   // Some default values for the low-dose case used in the original paper

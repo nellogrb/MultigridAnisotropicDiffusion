@@ -105,9 +105,6 @@ public:
    *  informations on the current status. */
   itkSetMacro( Verbose, bool );
 
-  /** Input image setter. */
-  void SetInput( const InputImageType * inputImage );
-
 protected:
 
   /** Class constructor. */

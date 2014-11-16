@@ -104,17 +104,6 @@ MultigridAnisotropicDiffusionImageFilter< TInputImage, TOutputImage, TSmootherTy
 template < class TInputImage, class TOutputImage, class TSmootherType >
 void
 MultigridAnisotropicDiffusionImageFilter< TInputImage, TOutputImage, TSmootherType >
-::SetInput( const InputImageType * inputImage )
-{
-
-  this->ProcessObject::SetNthInput( 0, const_cast< InputImageType * >( inputImage ) );
-
-}
-
-
-template < class TInputImage, class TOutputImage, class TSmootherType >
-void
-MultigridAnisotropicDiffusionImageFilter< TInputImage, TOutputImage, TSmootherType >
 ::GenerateData()
 {
 
