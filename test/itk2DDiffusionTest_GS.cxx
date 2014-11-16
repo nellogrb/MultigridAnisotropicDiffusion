@@ -55,30 +55,30 @@ int itk2DDiffusionTest_GS( int argc, char * argv[] )
 
   itk::ImageRegionIteratorWithIndex< tensorImageType > tensorIterator( tensorImage, input->GetLargestPossibleRegion() );
 
-  typename ImageType::IndexType index;
-  typename ImageType::SizeType size = input->GetLargestPossibleRegion().GetSize();
+  //typename ImageType::IndexType index;
+  //typename ImageType::SizeType size = input->GetLargestPossibleRegion().GetSize();
 
   while ( !tensorIterator.IsAtEnd() )
     {
 
-    index = tensorIterator.GetIndex();
 
     // Space-independent anisotropic tensor
-    /*tensorIterator.Value()( 0, 0 ) = 50.;
+    tensorIterator.Value()( 0, 0 ) = 50.;
 
     tensorIterator.Value()( 1, 1 ) = 30.;
 
-    tensorIterator.Value()( 0, 1 ) = 0.;*/
-
-
+    tensorIterator.Value()( 0, 1 ) = 0.;
 
 
     // Space-dependent isotropic tensor
-    tensorIterator.Value()( 0, 0 ) = 50. + 50. * ( cos( ( 4 * M_PI ) * (float) index[ 0 ] / (float) size[ 0 ] ) ) ;
+
+    //index = tensorIterator.GetIndex();
+
+    /*tensorIterator.Value()( 0, 0 ) = 50. + 50. * ( cos( ( 4 * M_PI ) * (float) index[ 0 ] / (float) size[ 0 ] ) ) ;
 
     tensorIterator.Value()( 1, 1 ) = tensorIterator.Value()( 0, 0 );
 
-    tensorIterator.Value()( 0, 1 ) = 0.;
+    tensorIterator.Value()( 0, 1 ) = 0.;*/
 
 
     ++tensorIterator;
@@ -96,12 +96,6 @@ int itk2DDiffusionTest_GS( int argc, char * argv[] )
   filter->SetMaxCycles( 100 );
   filter->SetTolerance( 1e-10 );
 
-  //typedef filterType::CoarseGridOperatorType coarseOperatorType;
-  //coarseOperatorType coarseOperator = filterType::CoarseGridOperatorType::DCA;
-
-  //if ( std::strcmp( argv[ 1 ], "gca" ) == 0 )
-  //  coarseOperator = filterType::CoarseGridOperatorType::GCA;
-
   typedef filterType::CycleType cycleType;
   cycleType cycle = filterType::CycleType::VCYCLE;
 
@@ -110,7 +104,6 @@ int itk2DDiffusionTest_GS( int argc, char * argv[] )
   else if ( std::strcmp( argv[ 1 ], "s" ) == 0 )
     cycle = filterType::CycleType::SMOOTHER;
 
-  //filter->SetCoarseGridOperator( coarseOperator );
   filter->SetCycle( cycle );
 
   filter->Update();

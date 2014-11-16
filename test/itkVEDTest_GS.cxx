@@ -49,12 +49,6 @@ int itkVEDTest_GS( int argc, char * argv[] )
 
   filterType::Pointer filter = filterType::New();
 
-  //typedef filterType::CoarseGridOperatorType coarseOperatorType;
-  //coarseOperatorType coarseOperator = filterType::CoarseGridOperatorType::DCA;
-
-  //if ( std::strcmp( argv[ 1 ], "gca" ) == 0 )
-  //  coarseOperator = filterType::CoarseGridOperatorType::GCA;
-
   typedef filterType::CycleType cycleType;
   cycleType cycle = filterType::CycleType::VCYCLE;
 
@@ -63,7 +57,6 @@ int itkVEDTest_GS( int argc, char * argv[] )
   else if ( std::strcmp( argv[ 1 ], "s" ) == 0 )
     cycle = filterType::CycleType::SMOOTHER;
 
-  //filter->SetCoarseGridOperator( coarseOperator );
   filter->SetCycle( cycle );
   filter->SetDiffusionIterationsPerGrid( 3 );
 
@@ -89,7 +82,7 @@ int itkVEDTest_GS( int argc, char * argv[] )
   filter->SetSensitivity( 10. );
 
   filter->SetIterations( 1 );
-  filter->SetTolerance( 1e-20 );
+  filter->SetTolerance( 1e-10 );
 
   filter->SetTimeStep( 0.1 );
   filter->SetDiffusionIterations( 4 );
