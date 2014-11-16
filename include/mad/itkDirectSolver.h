@@ -49,7 +49,7 @@ namespace mad
  */
 
 template < unsigned int VDimension >
-class ITK_EXPORT DirectSolver
+class DirectSolver
 {
 public:
 

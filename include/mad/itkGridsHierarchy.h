@@ -50,7 +50,7 @@ namespace mad
  */
 
 template < unsigned int VDimension >
-class ITK_EXPORT GridsHierarchy
+class GridsHierarchy
 {
 public:
 

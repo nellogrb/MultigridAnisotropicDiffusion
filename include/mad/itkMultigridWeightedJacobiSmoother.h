@@ -40,7 +40,7 @@ namespace mad
  */
 
 template < unsigned int VDimension >
-class ITK_EXPORT MultigridWeightedJacobiSmoother : public MultigridSmoother< VDimension >
+class MultigridWeightedJacobiSmoother : public MultigridSmoother< VDimension >
 {
 public:
 

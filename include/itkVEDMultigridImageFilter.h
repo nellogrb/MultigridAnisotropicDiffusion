@@ -42,7 +42,7 @@ namespace itk
  */
 template < class TInputImage, class TOutputImage,
            class TSmootherType = mad::MultigridGaussSeidelSmoother< TInputImage::ImageDimension > >
-class ITK_EXPORT VEDMultigridImageFilter :
+class VEDMultigridImageFilter :
   public ImageToImageFilter< Image< typename TInputImage::PixelType, 3 >, Image< typename TOutputImage::PixelType, 3 > >
 {
 public:

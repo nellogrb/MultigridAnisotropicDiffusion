@@ -42,7 +42,7 @@ namespace mad
  */
 
 template < unsigned int VDimension >
-class ITK_EXPORT MultigridSmoother
+class MultigridSmoother
 {
 public:
 

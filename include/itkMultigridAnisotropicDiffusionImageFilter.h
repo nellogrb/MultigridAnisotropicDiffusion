@@ -88,7 +88,7 @@ namespace itk
  */
 template < class TInputImage, class TOutputImage,
            class TSmootherType = mad::MultigridGaussSeidelSmoother< TInputImage::ImageDimension > >
-class ITK_EXPORT MultigridAnisotropicDiffusionImageFilter :
+class MultigridAnisotropicDiffusionImageFilter :
   public ImageToImageFilter< TInputImage, TOutputImage >
 {
 public:

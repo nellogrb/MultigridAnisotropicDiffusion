@@ -39,7 +39,7 @@ namespace mad
  */
 
 template < unsigned int VDimension >
-class ITK_EXPORT MultigridGaussSeidelSmoother : public MultigridSmoother< VDimension >
+class MultigridGaussSeidelSmoother : public MultigridSmoother< VDimension >
 {
 public:
 

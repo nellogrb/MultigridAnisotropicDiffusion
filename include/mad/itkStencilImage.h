@@ -45,7 +45,7 @@ namespace mad
  * \ingroup ITKMultigridAnisotropicDiffusion
  */
 template < class TPixelType, unsigned int VDimension >
-class ITK_EXPORT StencilImage : public Image< Neighborhood< TPixelType, VDimension >, VDimension >
+class StencilImage : public Image< Neighborhood< TPixelType, VDimension >, VDimension >
 {
 public:
 
